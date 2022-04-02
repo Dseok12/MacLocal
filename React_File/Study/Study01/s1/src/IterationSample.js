@@ -24,11 +24,21 @@ const IterationSample = () => {
     setInputText('');
   }
 
+  const handleKey = (e) => {
+    if(e.key === 'Enter'){
+      onClick()
+    }
+  }
+
   return(
     <>
-      <input value={inputText} onChange={onChange} />
+      <input
+        value={inputText}
+        onChange={onChange}
+        onKeyPress={handleKey}
+      />
       <button
-        onClick={onClick}
+        // onClick={onClick}
       >추가</button>
       <ul>{namesList}</ul>
     </>
