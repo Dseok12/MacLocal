@@ -11,8 +11,7 @@ const IterationSample = () => {
     {id: 6, text: '구례?'}
   ]);
   const [inputText, setInputText] = useState('');
-  const [nextId, setNextId] = useState(7);
-  const namesList = names.map(name => <li key={name.id}>{name.text}</li>);
+  const [nextId, setNextId] = useState(7);// 새로운 항목을 추가할 때 사용할 ID
   const onChange = e => setInputText(e.target.value)
   const onClick = () => {
     const nextNames = names.concat({
@@ -23,6 +22,17 @@ const IterationSample = () => {
     setNames(nextNames);
     setInputText('');
   }
+
+  const onRemove = id => {
+    const nextNames = names.filter(name => name.id !== id)
+    setNames(nextNames)
+  };
+
+  const namesList = names.map(name => (
+    <li key={name.id} onDoubleClick={() => onRemove(name.id)}>
+      {name.text}
+    </li>
+  ))
 
   const handleKey = (e) => {
     if(e.key === 'Enter'){
@@ -38,7 +48,7 @@ const IterationSample = () => {
         onKeyPress={handleKey}
       />
       <button
-        // onClick={onClick}
+        onClick={onClick}
       >추가</button>
       <ul>{namesList}</ul>
     </>
