@@ -10,11 +10,31 @@
 </head>
 <body>
   <div class="wrap">
+    <!-- 팝업 시작 -->
+    <div class="popup">
+      <div class="inner">
+        <a href="#">메가스터디 팝업</a>
+      </div>
+    </div>
+    <!-- 팝업 끝 -->
+    <!-- position utill -->
+    <div class="side_utill">
+      <button class="side_utill_toggle_btn">
+        <span class="side_utill_close">접기</span>
+      </button>
+      <ul class="utill_list">
+        <li><a href="javascript:void(0)">사람</a></li>
+        <li><a href="javascript:void(0)">재생</a></li>
+        <li><a href="javascript:void(0)">목록</a></li>
+        <li><a href="javascript:void(0)">소리</a></li>
+        <li><a href="javascript:void(0)">장바구니</a></li>
+        <li><a href="javascript:void(0)">배달</a></li>
+      </ul>
+    </div>
+    <!-- // position utill -->
+    <!-- header 시작 -->
     <header>
-      <div class="popup">
-        <div class="inner">
-          <a href="#">메가스터디 팝업</a>
-        </div>
+      <div class="inner_wrap">
         <div class="header_top">
           <div class="inner">
             <div class="sns_wrap">
@@ -56,6 +76,7 @@
       </div>
     </header>
   </div>
+  <script src="./js/jquery-3.6.0.min.js"></script>
   <script src="./js/index.js"></script>
 </body>
 </html>
