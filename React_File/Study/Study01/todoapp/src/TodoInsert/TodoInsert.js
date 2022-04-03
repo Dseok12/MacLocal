@@ -5,7 +5,7 @@ import {
 import './TodoInsert.scss';
 
 
-const TodoInsert = ({ onInsert }) => {
+const TodoInsert = ({ onInsert, saveData }) => {
   const [value, setValue] = useState('');
 
   const onChange = useCallback(e => {
@@ -28,7 +28,10 @@ const onSubmit = useCallback(
         value={value}
         onChange={onChange}
       />
-      <button type="submit">
+      <button
+        type="submit"
+        onSubmit={saveData}
+      >
         <IoIosAddCircle />
       </button>
     </form>
