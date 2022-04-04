@@ -104,9 +104,34 @@ header{
 }
 /* header_top 끝 */
 
-
-
-
+/* header_mid 시작 */
+.header_mid{
+  width: 100%;
+  position: relative;
+}
+.up_slide_wrap{
+  float: left;
+  width: 100%;
+}
+.up_slide_box{
+  width: 200px;
+  height: 40px;
+  float: left;
+  overflow: hidden;
+}
+.up_slide_box > li{
+  float: left;
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  background-color: azure;
+  border: 1px solid #222;
+}
+.up_slide_box > li > a{
+  display: block;
+  color: #222;
+  text-align: center;
+}
 
 
 
