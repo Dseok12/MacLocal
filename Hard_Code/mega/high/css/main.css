@@ -17,6 +17,8 @@ header{
   width: 1010px;
   margin: 0 auto;
 }
+
+/* side_utill 시작 */
 .side_utill{
   width: 100px;
   position: fixed;
@@ -53,4 +55,75 @@ header{
 .utill_list li a{
   color: #999898;
 }
+/* side_utill 끝 */
+
+/* header_top 시작 */
+.header_top{
+  width: 100%;
+  border-bottom: 1px solid #000;
+}
+.sns_wrap .sns_box{
+  float: left;
+}
+.sns_wrap .sns_box > li{
+  float: left;
+  margin-right: 10px;
+  padding: 10px 0;
+}
+.sns_wrap .sns_box > li:last-child{
+  margin-right: 0;
+}
+.sns_wrap .sns_box > li > a{
+  color: #999898;
+  transition: color 0.2s;
+}
+.sns_wrap .sns_box > li > a:hover{
+  color: #222;
+  text-decoration: underline;
+}
+
+.top_gnb{
+  float: right;
+}
+.top_gnb > li{
+  float: left;
+  padding: 10px 0;
+  margin-right: 10px;
+  color: #999898;
+}
+.top_gnb > li > a{
+  color: #222;
+}
+.top_gnb > li > a:hover{
+  text-decoration: underline;
+}
+/* header_top 끝 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
