@@ -91,6 +91,11 @@ header{
   margin-right: 10px;
   color: #999898;
 }
+.top_gnb > li .d_day{
+  color: rgb(47, 47, 255);
+  font-weight: 700;
+  vertical-align: bottom;
+}
 .top_gnb > li > a{
   color: #222;
 }
