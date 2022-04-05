@@ -20,6 +20,7 @@ header{
 
 /* side_utill 시작 */
 .side_utill{
+  display: none;
   width: 100px;
   position: fixed;
   left: 0;
@@ -404,14 +405,37 @@ header{
   border-bottom: 1px solid #d9d9d9;
 }
 .mega_teacher_btn{
-  display: inline-block;
   float: left;
+  display: block;
   line-height: 68px;
   width: 110px;
   margin-right: 10px;
   font-size: 18px;
   font-weight: 500;
   color: #222;
+  position: relative;
+}
+.mega_teacher_btn::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 3px;
+  height: 12px;
+  background-color: #222;
+  transform: translate(0, -50%) rotate(45deg);
+  border-radius: 10px;
+}
+.mega_teacher_btn::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 17px;
+  width: 3px;
+  height: 12px;
+  background-color: #222;
+  transform:  translate(0, -50%) rotate(-45deg);
+  border-radius: 10px;
 }
 .main_menu{
   float: left;
@@ -426,6 +450,9 @@ header{
   font-size: 18px;
   color: #222;
   font-weight: 500;
+}
+.main_menu > .nav_box > li:hover > a{
+  text-decoration: underline;
 }
 
 .search_menu{
@@ -455,11 +482,54 @@ header{
   line-height: 68px;
   font-size: 14px;
 }
-.search_popup{
+.search_menu > .search_box > li:hover > a{
+  text-decoration: underline;
+}
+.bg{
   display: none;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.search_popup{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+  z-index: 5;
+}
+.inner_wrap > form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .detail_menu_wrap{
   display: none;
+}
+
+.main_menu_up_slide_wrap{
+  position: absolute;
+  right: 80px;
+  top: 0;
+}
+.main_menu_up_slide_box{
+  height: 68px;
+  overflow: hidden;
+}
+.main_menu_up_slide_box > li{
+  height: 68px;
+}
+.main_menu_up_slide_box > li > a{
+  line-height: 68px;
 }
 
 

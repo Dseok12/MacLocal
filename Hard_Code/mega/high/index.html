@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -164,19 +165,8 @@
           <nav class="search_menu">
             <ul class="search_box">
               <li><a href="javascript:void(0)">강좌•교재찾기</a></li>
-              <li><a href="javascript:void(0)" class="search_btn">검색돋보기</a>
-                <div class="search_popup">
-                  <form action="">
-                    <div class="total_search_box">
-                      <label for="total_search">통합검색</label>
-                      <input type="text" placeholder="검색어를 입력하세요." id="total_search" />
-                    </div>
-                    <div class="smart_search_box">
-                      <label for="smart_search">스마트코드</label>
-                      <input type="text" placeholder="스마트코드를 입력하세요." id="smart_search" />
-                    </div>
-                  </form>
-                </div>
+              <li><a href="javascript:void(0)" class="search_btn"><i class="fa-solid fa-magnifying-glass">돋보기</i></a>
+                
               </li>
               <li><a href="javascript:void(0)" class="detail_menu_btn">상세메뉴</a>
                 <div class="detail_menu_wrap">
@@ -186,6 +176,23 @@
             </ul>
           </nav>
         </div>
+        <!-- 검색 팝업 시작 -->
+        <div class="bg"></div>
+        <div class="search_popup">
+          <div class="inner_wrap">
+            <form action="">
+              <div class="total_search_box">
+                <label for="total_search">통합검색</label>
+                <input type="text" placeholder="검색어를 입력하세요." id="total_search" />
+              </div>
+              <div class="smart_search_box">
+                <label for="smart_search">스마트코드</label>
+                <input type="text" placeholder="스마트코드를 입력하세요." id="smart_search" />
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- 검색 팝업 끝 -->
         <div class="main_menu_up_slide_wrap">
           <ul class="main_menu_up_slide_box">
             <li><a href="javascript:void(0)">수학 확통 교재입고</a></li>
@@ -197,6 +204,7 @@
     </header>
   </div>
   <script src="./js/jquery-3.6.0.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
   <script src="./js/index.js"></script>
 </body>
 
