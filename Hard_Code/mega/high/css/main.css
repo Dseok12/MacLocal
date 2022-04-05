@@ -229,7 +229,7 @@ header{
 /* header_mid 왼쪽 배너 시작 */
 .right_banner{
   float: right;
-  width: 280px;
+  width: 290px;
   position: relative;
   overflow: hidden;
 }
@@ -264,11 +264,12 @@ header{
   left: 0px;
   top: 50%;
   transform: translate(0, -50%);
+  background-color: #8a8a8a;
   border: none;
-  text-indent: -999em;
-  width: 30px;
+  width: 40px;
   height: 20px;
   border-radius: 5px;
+  font-size: 12px;
   cursor: pointer;
   z-index: 4;
 }
@@ -277,18 +278,192 @@ header{
   right: 0px;
   top: 50%;
   transform: translate(0, -50%);
+  background-color: #8a8a8a;
   border: none;
-  text-indent: -999em;
-  width: 30px;
+  width: 40px;
   height: 20px;
   border-radius: 5px;
+  font-size: 12px;
   cursor: pointer;
   z-index: 4;
 }
 /* header_mid 왼쪽 배너 끝 */
 
+/* header_bot 시작 */
+.header_bot{
+  width: 100%;
+  height: 36px;
+  position: relative;
+  border-bottom: 3px solid rgb(0, 81, 255);
+  background-color: #f0f7ff;
+}
+
+.stiker_wrap{
+  width: 101px;
+  position: absolute;
+  left: 100px;
+  bottom: 0;
+  border: 1px solid #222;
+  border-radius: 300px 300px 100px 100px;
+  overflow: hidden;
+  background-color: #fff;
+}
+.sticker_box{
+  width: 202px;
+}
+.sticker_box > li{
+  width: 101px;
+  float: left;
+  text-align: center;
+}
+.sticker_box > li > a{
+  display: inline-block;
+  width: 100%;
+  padding: 36px 0;
+}
+
+.level_box{
+  float: left;
+}
+.level_box > li{
+  float: left;
+  width: 88px;
+  height: 36px;
+  text-align: center;
+}
+.level_box > li:first-child{
+  background-color: #007af3;
+}
+.level_box > li:nth-child(2){
+  background-color: #D5Eaff;
+}
+.level_box > li:nth-child(3){
+  background-color: #e4f2ff;
+}
+.level_box > li > a{
+  display: inline-block;
+  height: 100%;
+  line-height: 36px;
+  font-weight: 600;
+  color: #222;
+}
+.level_box > li:hover > a{
+  text-decoration: underline;
+}
+.level_box > li:first-child > a{
+  color: #fff;
+}
+
+.right_wrap{
+  float: right;
+}
+.e-market{
+  float: left;
+}
+.e-market > li{
+  float: left;
+  height: 36px;
+  margin-right: 8px;
+}
+.e-market > li > a{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 36px;
+  color: #222;
+  font-weight: 300;
+  
+}
+.e-market > li:hover > a{
+  text-decoration: underline;
+}
+
+.sub{
+  float: right;
+}
+.sub > li{
+  float: left;
+  height: 36px;
+  margin-right: 10px;
+}
+.sub > li > a{
+  display: inline-block;
+  line-height: 36px;
+  color: #222;
+}
+.sub > li:hover > a{
+  text-decoration: underline;
+}
+/* header_bot 끝 */
+
+/* main_menu 시작 */
+.nav_wrap{
+  width: 100%;
+  height: 68px;
+  position: relative;
+  border-bottom: 1px solid #d9d9d9;
+}
+.mega_teacher_btn{
+  display: inline-block;
+  float: left;
+  line-height: 68px;
+  width: 110px;
+  margin-right: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #222;
+}
+.main_menu{
+  float: left;
+}
+.main_menu > .nav_box{}
+.main_menu > .nav_box > li{
+  float: left;
+  line-height: 68px;
+  margin-right: 10px;
+}
+.main_menu > .nav_box > li > a{
+  font-size: 18px;
+  color: #222;
+  font-weight: 500;
+}
+
+.search_menu{
+  float: right;
+}
+.search_menu > .search_box{}
+.search_menu > .search_box > li{
+  float: left;
+  position: relative;
+  margin-right: 10px;
+}
+.search_menu > .search_box > li:first-child{
+  position: relative;
+}
+.search_menu > .search_box > li:first-child::after{
+  content: '';
+  width: 1px;
+  height: 14px;
+  background-color: #d9d9d9;
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.search_menu > .search_box > li > a{
+  color: #222;
+  line-height: 68px;
+  font-size: 14px;
+}
+.search_popup{
+  display: none;
+}
+.detail_menu_wrap{
+  display: none;
+}
 
 
+/* main_menu 끝 */
 
 
 
