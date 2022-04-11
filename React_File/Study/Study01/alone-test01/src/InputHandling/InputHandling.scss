@@ -1,0 +1,23 @@
+.InputHandling{
+  width: 100%;
+  .inner{
+    width: 1000px;
+    margin: 100px auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .user_id_box{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .user_pw_box{
+      width: 100%;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
