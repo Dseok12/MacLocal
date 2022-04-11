@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import './TextComponent.css';
 
 const TextComponent = () => {
@@ -9,8 +9,20 @@ const TextComponent = () => {
     window.sessionStorage.setItem('test', JSON.stringify(text01))
   }
 
-  const getStorage = () => {
-    window.sessionStorage.getItem(JSON.parse('test'));
+  const [inputText, setInputText] = useState('')
+
+  const onChangeInput = e => {
+    setInputText(e.target.value)
+  }
+
+  useEffect(() => {
+    window.sessionStorage.setItem('data',JSON.stringify(inputText))
+  }, [inputText])
+
+  const onKeyPress = (e) => {
+    if(e.key === 'Enter'){
+      this.onChangeInput()
+    }
   }
 
   const clearStorage = () => {
@@ -24,7 +36,13 @@ const TextComponent = () => {
         <h1>Hi, TextComponent</h1>
         <input
           type='text'
+          name='inputText'
+          value={inputText}
+          onChange={onChangeInput}
+          onKeyPress={onKeyPress}
         />
+        <button>input Add</button>
+        <h2>{inputText}</h2>
         <p>{test}</p>
         <button
           type="button"
