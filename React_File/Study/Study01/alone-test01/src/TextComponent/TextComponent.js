@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import './TextComponent.css';
 
 const TextComponent = () => {
   const [test, setTest] = useState('');
+
   const setStorage = (text01) => {
     setTest(text01)
     window.sessionStorage.setItem('test', JSON.stringify(text01))
   }
+
+  const getStorage = () => {
+    window.sessionStorage.getItem(JSON.parse('test'));
+  }
+
   const clearStorage = () => {
     setTest('')
     window.sessionStorage.removeItem('test')
   }
+  
   return(
     <div>
       <div className="inner">
