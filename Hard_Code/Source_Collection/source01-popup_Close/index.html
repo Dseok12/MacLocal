@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,26 @@
   <link rel="stylesheet" href="./css/main.css">
   <title>기본셋팅</title>
 </head>
+
 <body>
-  
+  <aside class="popup" id="popupWrap">
+    <div class="inner" id="popup_1">
+      <div class="area">
+        <img src="https://via.placeholder.com/250x200" alt="배너이미지1">
+      </div>
+      <button type="button" onClick="PopupNoDisplay_1()">
+        <span>
+          하루동안 보지않기
+        </span>
+      </button>
+      <button type="button" onClick="PopupHide();">[닫기]</button>
+    </div>
+    <div class="popupbg" style="background:gray;"></div>
+  </aside>
+
   <script src="./js/jquery-3.6.0.min.js"></script>
   <script src="./js/index.js"></script>
   <script></script>
 </body>
+
 </html>
