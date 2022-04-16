@@ -1,10 +1,16 @@
-import React from 'react';
+/* eslint-disable */
+import React, {useState} from 'react';
 import {
   Navbar, Container, Nav, NavDropdown
-} from 'react-bootstrap'
+} from 'react-bootstrap';
+import Data from './data';
+import Card from './Card';
 import './App.css';
 
 function App() {
+
+  let [shoes, shoes변경] = useState(Data)
+
   return (
     <div className="App">
 
@@ -27,11 +33,13 @@ function App() {
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
       </div>
 
-      <div className='container'>
-        <div className='row'>
-          <div className='col-md-4'>asdf</div>
-          <div className='col-md-4'>asdf</div>
-          <div className='col-md-4'>asdf</div>
+      <div className="container">
+        <div className="row">
+          {
+            shoes.map(function(글, i){
+              return <Card shoes작명={shoes[i]} i작명={i} />
+            })
+          }
         </div>
       </div>
 
