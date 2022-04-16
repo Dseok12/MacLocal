@@ -11,20 +11,24 @@
 </head>
 
 <body>
-  <aside class="popup" id="popupWrap">
-    <div class="inner" id="popup_1">
-      <div class="area">
-        <img src="https://via.placeholder.com/250x200" alt="배너이미지1">
+  <div class="wrap">
+    <aside class="popup" id="popupWrap">
+      <div class="inner" id="popup_1">
+        <div class="area">
+          <img src="https://via.placeholder.com/250x200" alt="배너이미지1">
+        </div>
+        <div class="btn_box">
+          <button type="button" class="oneday" onClick="PopupNoDisplay_1()">
+            <span>
+              하루동안 보지않기
+            </span>
+          </button>
+          <button type="button" class="close" onClick="PopupHide();">[닫기]</button>
+        </div>
       </div>
-      <button type="button" onClick="PopupNoDisplay_1()">
-        <span>
-          하루동안 보지않기
-        </span>
-      </button>
-      <button type="button" onClick="PopupHide();">[닫기]</button>
-    </div>
-    <div class="popupbg" style="background:gray;"></div>
-  </aside>
+      <div class="popupbg" style="background:gray;"></div>
+    </aside>
+  </div>
 
   <script src="./js/jquery-3.6.0.min.js"></script>
   <script src="./js/index.js"></script>
