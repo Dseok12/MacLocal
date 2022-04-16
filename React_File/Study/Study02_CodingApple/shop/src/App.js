@@ -1,11 +1,12 @@
 /* eslint-disable */
 import React, {useState} from 'react';
-import {
-  Navbar, Container, Nav, NavDropdown
-} from 'react-bootstrap';
+import Header from './Header';
 import Data from './data';
 import Card from './Card';
+import Jombotron from './Jombotron';
+import Detail from './Detail';
 import './App.css';
+import {Link, Route, Switch} from 'react-router-dom';
 
 function App() {
 
@@ -14,34 +15,33 @@ function App() {
   return (
     <div className="App">
 
-      <Navbar bg="dark" variant="dark">
-        <Container>
-        <Navbar.Brand href="#home">Shop</Navbar.Brand>
-        <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">Features</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
-        </Nav>
-        </Container>
-      </Navbar>
+      <Header />
 
-      <div class="jumbotron" className='background'>
-        <h1 class="display-4">Hello, world!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class="my-4" />
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-      </div>
 
-      <div className="container">
-        <div className="row">
-          {
-            shoes.map(function(글, i){
-              return <Card shoes작명={shoes[i]} i작명={i} />
-            })
-          }
+    <Switch>
+      <Route exact path='/'>
+        <Jombotron/>
+        <div className="container">
+          <div className="row">
+            {
+              shoes.map(function(글, i){
+                return <Card shoes작명={shoes[i]} i작명={i} key={i} />
+              })
+            }
+          </div>
         </div>
-      </div>
+      </Route>
+      <Route path='/detail'>
+        <Detail />
+      </Route>
+
+      <Route path='/:id'>
+        <div>아무거나 적었을 때 이거 보여주셈</div>
+      </Route>
+      {/* <Route path='/어쩌구' component={Modal}></Route> */}
+    </Switch>
+
+      
 
     </div>
   );
