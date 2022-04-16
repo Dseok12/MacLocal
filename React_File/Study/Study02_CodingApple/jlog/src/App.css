@@ -20,3 +20,20 @@
   background-color: #eee;
   text-align: center;
 }
+
+.publish {
+  margin-top : 30px;
+  margin-bottom : 30px;
+}
+.publish input {
+  padding : 10px;
+  font-size : 16px;
+  border-radius : 5px;
+  width : 80%;
+  border : 1px solid grey;
+}
+.publish button {
+  display : block;
+  margin : auto;
+  margin-top : 10px;
+}

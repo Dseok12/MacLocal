@@ -10,12 +10,14 @@ function App() {
 
   let [modal, modal번경] = useState(false);
 
-  let [누른제목, 누른제목변경] = useState(0)
+  let [누른제목, 누른제목변경] = useState(0);
+
+  let [입력값, 입력값변경] = useState('');
 
   function 반복된UI(){
     var 어레이 = [];
     for(var i = 0; i < 3; i++){
-      어레이.push(<div>안녕</div>)
+      어레이.push(<div key={i}>안녕</div>)
     }
     return 어레이;
   }
@@ -54,7 +56,7 @@ function App() {
       {
         글제목.map(function(글, i){
           return (
-            <div className="list">
+            <div className="list" key={i}>
               <h3 onClick={ () => {누른제목변경(i)} }>{ 글 }<span onClick={ () => {따봉변경(따봉+1)} }> 😍</span> {따봉}</h3>
               <p>2월 17일 발행</p>
               <hr/>
@@ -62,6 +64,27 @@ function App() {
           )
         })
       }
+
+      {/* <input
+        onChange={ (e) => {
+          입력값변경(e.target.value)
+        } }
+      /> */}
+      <div className="publish">
+        <input
+          onChange={(e) => {
+            입력값변경(e.target.value)
+          }}
+        />
+        <button onClick={() => {
+          var arrayCopy = [...글제목];
+          arrayCopy.unshift(입력값);
+          글제목변경(arrayCopy);
+        }}>저장</button>
+      </div>
+
+
+
 
       <button onClick={ () => {누른제목변경(0)} }>버튼1</button>
       <button onClick={ () => {누른제목변경(1)} }>버튼2</button>
