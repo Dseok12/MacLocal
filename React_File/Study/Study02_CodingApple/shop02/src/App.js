@@ -19,8 +19,8 @@ function App() {
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand><Link to='/'>Shop</Link></Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link><Link to='/'>Home</Link></Nav.Link>
-          <Nav.Link><Link to='/detail'>Detail</Link></Nav.Link>
+          <Nav.Link as={Link} to='/'>Home</Nav.Link>
+          <Nav.Link as={Link} to='/detail'>Detail</Nav.Link>
           <Nav.Link>Pricing</Nav.Link>
         </Nav>
       </Navbar>
@@ -57,8 +57,8 @@ function App() {
           </div>
         </Route>
 
-        <Route path='/detail'>
-          <Detail />
+        <Route path='/detail/:id'>
+          <Detail shoes작명={shoes} />
         </Route>
 
         <Route path='/:id'></Route>

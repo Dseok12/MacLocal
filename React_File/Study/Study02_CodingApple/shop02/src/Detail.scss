@@ -1,0 +1,28 @@
+.my-alert {
+  background : #eeeeee;
+  padding : 15px;
+  border-radius : 5px;
+  max-width : 500px;
+  width : 100%;
+  margin : auto;
+}
+.my-alert2 {
+  @extend .my-alert;
+  background : yellow;
+}
+
+@mixin 함수() {
+  background : #eeeeee;
+  padding : 15px;
+  border-radius : 5px;
+  max-width : 500px;
+  width : 100%;
+  margin : auto;
+}
+.my-alert {
+  @include 함수()
+}
+
+.my-alert p {
+  margin-bottom : 0;
+}
