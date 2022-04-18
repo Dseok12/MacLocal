@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {useHistory, useParams} from 'react-router-dom';
 import styled from 'styled-components';
+import { 재고context } from "./App";
 import './Detail.scss';
 
 let 박스 = styled.div`
@@ -35,6 +36,8 @@ function Detail (props) {
   let [alert, alert변경] = useState(true);
 
   let [inputData, inputData병경] = useState('');
+
+  let 재고 = useContext(재고context);
 
   useEffect(() => {
     // 기능 작성하기

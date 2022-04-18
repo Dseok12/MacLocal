@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   Navbar, Nav
 } from 'react-bootstrap';
@@ -9,6 +9,8 @@ import Detail from "./Detail";
 import {Link, Route, Switch} from 'react-router-dom';
 import axios from "axios";
 import './App.css';
+
+export let 재고context = React.createContext();
 
 function App() {
 
@@ -46,17 +48,19 @@ function App() {
           </div>
 
           <div className="container">
-            <div className="row">
-              {
-                shoes.map((글, i) => {
-                  return <Card
-                          shoes작명={shoes[i]}
-                          i작명={i}
-                          key={i}
-                        />
-                })
-              }
-            </div>
+            <재고context.Provider value={재고}>
+              <div className="row">
+                {
+                  shoes.map((글, i) => {
+                    return (<Card
+                            shoes작명={shoes[i]}
+                            i작명={i}
+                            key={i}
+                          />)
+                  })
+                }
+              </div>
+            </재고context.Provider>
             <button
               className="btn btn-primary"
               onClick={() => {
@@ -78,7 +82,9 @@ function App() {
         </Route>
 
         <Route path='/detail/:id'>
-          <Detail shoes작명={shoes} 재고작명={재고} 재고변경작명={재고변경} />
+          <재고context.Provider value={재고}>
+            <Detail shoes작명={shoes} 재고작명={재고} 재고변경작명={재고변경} />
+          </재고context.Provider>
         </Route>
 
         <Route path='/:id'></Route>
@@ -88,5 +94,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
