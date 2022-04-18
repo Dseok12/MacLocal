@@ -6,12 +6,14 @@ import {
 import Data from './data';
 import Card from "./Card";
 import Detail from "./Detail";
-import {Link, Route, Switch} from 'react-router-dom'
+import {Link, Route, Switch} from 'react-router-dom';
+import axios from "axios";
 import './App.css';
 
 function App() {
 
   let [shoes, shoes변경] = useState(Data);
+  let [재고, 재고변경] = useState([10, 11, 12]);
 
   return (
     <div className="App">
@@ -50,15 +52,33 @@ function App() {
                   return <Card
                           shoes작명={shoes[i]}
                           i작명={i}
+                          key={i}
                         />
                 })
               }
             </div>
+            <button
+              className="btn btn-primary"
+              onClick={() => {
+
+                // axios.post('서버API',{
+                //   id: 'asdfsafd',
+                //   pw: 1234
+                // }).then().catch()
+
+                axios.get('https://codingapple1.github.io/shop/data2.json')
+                .then((결과) => {
+                  // console.log(결과.data);
+                  shoes변경([...shoes, ...결과.data]);
+                })
+                .catch((err) => console.error(err));
+              }}
+            >더보기</button>
           </div>
         </Route>
 
         <Route path='/detail/:id'>
-          <Detail shoes작명={shoes} />
+          <Detail shoes작명={shoes} 재고작명={재고} 재고변경작명={재고변경} />
         </Route>
 
         <Route path='/:id'></Route>
