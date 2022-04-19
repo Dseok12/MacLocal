@@ -6,6 +6,7 @@ import {
 import Data from './data';
 import Card from "./Card";
 import Detail from "./Detail";
+import Cart from "./Cart";
 import {Link, Route, Switch} from 'react-router-dom';
 import axios from "axios";
 import './App.css';
@@ -25,26 +26,26 @@ function App() {
         <Nav className="mr-auto">
           <Nav.Link as={Link} to='/'>Home</Nav.Link>
           <Nav.Link as={Link} to='/detail'>Detail</Nav.Link>
-          <Nav.Link>Pricing</Nav.Link>
+          <Nav.Link as={Link} to='/cart'>Cart</Nav.Link>
         </Nav>
       </Navbar>
 
       
       <Switch>
         <Route exact path='/'>
-          <div class="jumbotron" className="background">
-            <h1 class="display-4">WellCome! Shop</h1>
-            <p class="lead">
+          <div className="jumbotron background">
+            <h1 className="display-4">WellCome! Shop</h1>
+            <p className="lead">
               This is a simple hero unit, a simple jumbotron-style
               component for calling extra attention to featured
               content or information.
             </p>
-            <hr class="my-4" />
+            <hr className="my-4" />
             <p>
               It uses utility classes for typography and spacing
               to space content out within the larger container.
             </p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
           </div>
 
           <div className="container">
@@ -81,13 +82,15 @@ function App() {
           </div>
         </Route>
 
-        <Route path='/detail/:id'>
+        <Route exact path='/detail/:id'>
           <재고context.Provider value={재고}>
             <Detail shoes작명={shoes} 재고작명={재고} 재고변경작명={재고변경} />
           </재고context.Provider>
         </Route>
 
-        <Route path='/:id'></Route>
+        <Route path='/cart'>
+          <Cart />
+        </Route>
       </Switch>
       
 
