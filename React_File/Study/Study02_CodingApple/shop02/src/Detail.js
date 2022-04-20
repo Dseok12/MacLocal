@@ -15,6 +15,8 @@ let 박스 = styled.div`
 `;
 
 
+
+
 /*
 class Detail2 extends React.Component{
 
@@ -40,11 +42,11 @@ function Detail (props) {
 
   let [alert, alert변경] = useState(true);
 
-  let [inputData, inputData병경] = useState('');
+  // let [inputData, inputData병경] = useState('');
 
   let [누른탭, 누른탭변경] = useState(0);
 
-  let [스위치, 스위치변경] = useState(false)
+  let [스위치, 스위치변경] = useState(false);
 
   let 재고 = useContext(재고context);
 
@@ -74,6 +76,22 @@ function Detail (props) {
   let 찾은상품 = props.shoes작명.find(function(상품){
     return 상품.id == id
   });
+
+  useEffect(() => {
+    var arr = localStorage.getItem('watched');
+    if( arr === null ){
+      arr = []
+    }else{
+      arr = JSON.parse(arr);
+    }
+    arr.push(id);
+
+    // 중복제거
+    arr = new Set(arr);
+    arr = [...arr];
+
+    localStorage.setItem('watched', JSON.stringify(arr))
+  }, [])
 
   let history = useHistory();
   
