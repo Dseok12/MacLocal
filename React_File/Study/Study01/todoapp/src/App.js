@@ -20,8 +20,9 @@ const App = () => {
       text: '로컬스토리지로 어떻게 넣지?',
       checked: false
     }
+    
   ]);
-
+  
   const saveData = () => {
     const listObj = [
       {
@@ -43,6 +44,7 @@ const App = () => {
 
     window.localStorage.setItem('setTodos', JSON.stringify(listObj))
   }
+
 
   const nextId = useRef(4);
 
