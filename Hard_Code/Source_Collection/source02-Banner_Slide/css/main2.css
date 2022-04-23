@@ -1,0 +1,41 @@
+@charset "utf-8";
+.rolling_wrap1{
+  width: 500px;
+  margin: 50px auto;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: aliceblue;
+  position: relative;
+}
+.rolling_box{
+  position: absolute;
+  left: 15px;
+  top: 8px;
+  width: 300px;
+  height: 18px;
+  line-height: 20px;
+  padding: 3px 0;
+  border: 1px solid #d9d9d9;
+  overflow: hidden;
+  float: left;
+}
+.view_side{
+  width: 1500px;
+}
+.rolling_box .view_side > li{
+  width: 300px;
+  line-height: 20px;
+  float: left;
+  text-align: center;
+}
+.control_box1{
+  float: right;
+}
+.control_box1 button{
+  cursor: pointer;
+}
+
+
+
+
+
