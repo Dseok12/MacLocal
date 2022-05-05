@@ -5,7 +5,7 @@ const Footer = () => {
   return(
     <div className="wrap footer_wrap">
       <div className="inner">
-        <h1>여기는 푸터</h1>
+        <h1>작정자: <strong>정원석</strong></h1>
       </div>
     </div>
   )

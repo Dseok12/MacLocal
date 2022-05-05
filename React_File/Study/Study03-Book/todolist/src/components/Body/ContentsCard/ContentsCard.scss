@@ -1,0 +1,74 @@
+.contents_wrap{
+  width: 270px;
+  height: 90vh;
+  background-color: #d9d9d9;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgb(202, 202, 202);
+  overflow-y: scroll;
+  
+  margin-right: 15px;
+  cursor: grab;
+  .contents_add_box{
+    width: 100%;
+    margin-bottom: 10px;
+    .add_input{
+      input{
+        width: 95%;
+        padding: 5px;
+        border: 1px solid rgb(127, 127, 127);
+        border-radius: 5px;
+      }
+    }
+    .btns{
+      button{
+        background-color: #fff;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        margin: 10px 0px 0px 5px;
+        border-radius: 5px;
+      }
+      .add_btn{
+        margin-left: 0;
+      }
+    }
+  }
+  .contents_list_box{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px rgb(204, 204, 204);
+    padding: 10px;
+    margin-top: 10px;
+    cursor: grab;
+    .user_name_box{
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      .user_name{
+        margin-right: 5px;
+        background-color: aquamarine;
+        padding: 3px;
+        border-radius: 5px;
+      }
+    }
+    .title{
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .date{
+      font-size: 12px;
+    }
+  }
+}
+.contents_wrap::-webkit-scrollbar{width: 5px;}
+.contents_wrap::-webkit-scrollbar-track{
+  background-color: #fff;
+  border-radius: 0px 10px 10px 0px;
+  overflow: hidden;
+}
+.contents_wrap::-webkit-scrollbar-thumb{
+  background-color: #000;
+  border-radius: 10px;
+}
