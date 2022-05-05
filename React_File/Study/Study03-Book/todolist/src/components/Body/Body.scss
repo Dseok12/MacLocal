@@ -1,0 +1,26 @@
+.body_wrap{
+  .inner{
+    width: 100%;
+    margin: 0 auto;
+    .contents_wrap{
+      height: 85vh;
+      overflow-y: hidden;
+      .contents_box{
+        width: 95%;
+        margin: 0 auto;
+        .contents_card_box{
+          display: flex;
+          align-items: flex-start;
+          padding: 10px 10px;
+          background-color: aliceblue;
+          li{
+            padding: 10px;
+            border: 1px solid blue;
+            background-color: antiquewhite;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}
