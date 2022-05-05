@@ -1,17 +1,14 @@
 .contents_wrap{
   width: 270px;
-  height: 90vh;
   background-color: #d9d9d9;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 5px 5px 10px rgb(202, 202, 202);
-  overflow-y: scroll;
-  
   margin-right: 15px;
-  cursor: grab;
   .contents_add_box{
     width: 100%;
     margin-bottom: 10px;
+    cursor: grab;
     .add_input{
       input{
         width: 95%;
@@ -36,39 +33,22 @@
   }
   .contents_list_box{
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 2px 2px 3px rgb(204, 204, 204);
-    padding: 10px;
+    border-radius: 5px;
+    padding: 5px 10px;
     margin-top: 10px;
-    cursor: grab;
-    .user_name_box{
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-      .user_name{
-        margin-right: 5px;
-        background-color: aquamarine;
-        padding: 3px;
-        border-radius: 5px;
-      }
-    }
-    .title{
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-    .date{
-      font-size: 12px;
+    overflow-y: scroll;
+    .contents_card_box{
+      height: 80vh;
     }
   }
 }
-.contents_wrap::-webkit-scrollbar{width: 5px;}
-.contents_wrap::-webkit-scrollbar-track{
+.contents_list_box::-webkit-scrollbar{width: 5px;}
+.contents_list_box::-webkit-scrollbar-track{
   background-color: #fff;
   border-radius: 0px 10px 10px 0px;
   overflow: hidden;
 }
-.contents_wrap::-webkit-scrollbar-thumb{
-  background-color: #000;
-  border-radius: 10px;
+.contents_list_box::-webkit-scrollbar-thumb{
+  background-color: rgb(90, 90, 90);
+  border-radius: 5px;
 }
