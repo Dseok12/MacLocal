@@ -1,0 +1,25 @@
+.setting_list{
+  position: absolute;
+  left: 0px;
+  top: 23px;
+  width: 60px;
+  z-index: 10;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(192, 192, 192);
+  box-shadow: 2px 2px 5px rgba($color: #000, $alpha: 0.5);
+  ul{
+    width: 100%;
+    li{
+      width: 100%;
+      margin-top: 10px;
+      button{
+        width: 100%;
+        width: 100%;
+      }
+    }
+    li:first-child{
+      margin-top: 0;
+    }
+  }
+}
