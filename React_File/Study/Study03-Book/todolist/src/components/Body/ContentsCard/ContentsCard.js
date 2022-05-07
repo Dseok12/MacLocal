@@ -1,6 +1,7 @@
 import React from "react";
 import './ContentsCard.scss';
 import ListItem from "./ListItem/ListItem";
+import ContentsFooter from "./ContentsFooter/ContentsFooter";
 
 const ContentsCard = () => {
   return (
@@ -21,6 +22,7 @@ const ContentsCard = () => {
           <ListItem />
         </ul>
       </div>
+      <ContentsFooter />
     </div>
   )
 }

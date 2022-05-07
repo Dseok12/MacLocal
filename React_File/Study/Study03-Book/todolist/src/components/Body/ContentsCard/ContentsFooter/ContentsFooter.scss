@@ -1,0 +1,11 @@
+.constents_footer{
+  .footer_btns{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    button{
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  }
+}

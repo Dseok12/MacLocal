@@ -23,6 +23,47 @@
         border-radius: 5px;
       }
     }
+    .user_setting_box{
+      position: relative;
+      .setting_btn{
+        display: block;
+        width: 80px;
+        cursor: pointer;
+        margin-left: 50%;
+        transform: translateX(-50%);
+      }
+      .setting_label{
+        display: block;
+        width: 80px;
+        cursor: pointer;
+        margin-top: 5px;
+      }
+      .setting_list{
+        position: absolute;
+        left: 0px;
+        top: 23px;
+        width: 60px;
+        z-index: 10;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: rgb(0, 251, 255);
+        display: none;
+        ul{
+          width: 100%;
+          li{
+            width: 100%;
+            margin-top: 10px;
+            button{
+              width: 100%;
+              width: 100%;
+            }
+          }
+          li:first-child{
+            margin-top: 0;
+          }
+        }
+      }
+    }
   }
   .title{
     font-size: 20px;
