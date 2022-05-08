@@ -1,0 +1,30 @@
+.add_input_setting{
+  position: absolute;
+  left: 5px;
+  top: 38px;
+  background-color: rgb(134, 209, 255);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px rgba($color: #000000, $alpha: 0.3);
+  ul{
+    li{
+      margin-top: 5px;
+      button{
+        width: 100%;
+        background-color: azure;
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover{
+          transition: all 0.3s;
+          background-color: rgb(196, 255, 255);
+          box-shadow: 2px 2px 2px rgba($color: #000000, $alpha: 0.3);
+        }
+      }
+      :first-child{
+        margin-top: 0;
+      }
+    }
+  }
+}

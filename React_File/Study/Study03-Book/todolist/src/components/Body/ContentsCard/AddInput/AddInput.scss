@@ -2,25 +2,53 @@
   width: 100%;
   margin-bottom: 10px;
   cursor: grab;
-  .add_input{
-    input{
-      width: 95%;
-      padding: 5px;
-      border: 1px solid rgb(127, 127, 127);
-      border-radius: 5px;
+  .add_input_box{
+    width: 100%;
+    .add_input_form{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .add_input{
+        width: 100%;
+        position: relative;
+        label{
+          display: block;
+          position: absolute;
+          left: 0;
+          text-indent: -999em;
+        }
+        input{
+          width: 95%;
+          padding: 5px;
+          border: 1px solid rgb(127, 127, 127);
+          border-radius: 5px;
+        }
+      }
+      .submit_btn_box{
+        .add_btn{
+          width: 50px;
+          background-color: #fff;
+          border: none;
+          cursor: pointer;
+          padding: 5px;
+          margin: 0px 0px 0px 5px;
+          border-radius: 5px;
+        }
+      }
     }
   }
-  .btns{
-    button{
-      background-color: #fff;
-      border: none;
-      cursor: pointer;
-      padding: 5px;
-      margin: 10px 0px 0px 5px;
-      border-radius: 5px;
-    }
-    .add_btn{
-      margin-left: 0;
+  .add_input_btns{
+    position: relative;
+    .add_input_setting_box{
+      > button{
+        width: 50px;
+        background-color: #fff;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        margin: 10px 0px 0px 5px;
+        border-radius: 5px;
+      }
     }
   }
 }
