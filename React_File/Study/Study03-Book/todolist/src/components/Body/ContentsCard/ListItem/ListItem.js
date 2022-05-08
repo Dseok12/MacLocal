@@ -2,9 +2,9 @@ import React, {useState} from "react";
 import './ListItem.scss';
 import SettingList from "./SettingList/SettingList";
 
-const ListItem = ({testListData작명들}) => {
+const ListItem = ({testListData작명}) => {
 
-  const {title, listMakeDate} = testListData작명들;
+  const {listTitle, listText, listMakeDate} = testListData작명;
 
   const [listOpen, setListOpen] = useState(false);
   
@@ -26,7 +26,8 @@ const ListItem = ({testListData작명들}) => {
             }
           </div>
         </div>
-        <h4 className="title">{title}</h4>
+        <h4 className="title">{listTitle}</h4>
+        <p className="text">{listText}</p>
         <div className="date">{listMakeDate}</div>
       </li>
     </div>
