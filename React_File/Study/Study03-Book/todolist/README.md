@@ -2,6 +2,13 @@
 ## 추후 팀프로젝트로 변경 예정
 
 ### 작성자: 정원석
+<h4 style="color: red">
+  학업 목적으로 만드는 프로젝트입니다.<br />
+  수익을 창출 할 목적이 아님을 밝힙니다.<br />
+  <br />
+  This is a project created for academic purposes.<br />
+  It is not intended to be monetized.
+</h4>
 
 #### `yarn install`
 프로젝트 클론 후 모듈 다운 받기
