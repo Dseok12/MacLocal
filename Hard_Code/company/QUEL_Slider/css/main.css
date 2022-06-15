@@ -11,5 +11,6 @@
 .card_name{background: pink;}
 .card_name p{padding: 10px 10px; display: flex; align-items: center; justify-content: space-between;}
 .card_name p span{display: inline-block;}
-.bx-wrapper .bx-pager.bx-default-pager a{width: 10px;}
+.bx-wrapper .bx-pager.bx-default-pager a{width: 10px;background: pink;}
+.bx-wrapper .bx-pager.bx-default-pager a:hover{background: lightpink;}
 .bx-wrapper .bx-pager.bx-default-pager a.active{width: 30px; background: hotpink;}
