@@ -4,6 +4,7 @@ const List = (props) => {
 
   return (
     <>
+      <h1>List</h1>
       {props.ContentList.map((content, index) => {
         return(
           <div

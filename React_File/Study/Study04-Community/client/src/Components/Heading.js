@@ -14,8 +14,8 @@ const Heading = () => {
     >
       <h1>Hello, React</h1>
       <Link to="/">Home</Link>
-      <Link to="/list">리스트</Link>
       <Link to="/upload">업로드</Link>
+      <Link to="/list">리스트</Link>
     </div>
     </>
   )
