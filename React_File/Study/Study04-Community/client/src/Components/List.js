@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const List = (props) => {
+
+  useEffect(() => {
+    axios.post('/api/test')
+    .then((res) => {
+      alert('요청성공')
+      console.log(res);
+    })
+    .catch((error) => {
+      alert('요청실패')
+      console.log(error);
+    });
+  },[])
 
   return (
     <>
