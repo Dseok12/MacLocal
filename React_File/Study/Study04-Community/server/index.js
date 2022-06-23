@@ -25,3 +25,8 @@ app.get('/', (요청, 응답) => {
 app.get('*', (요청, 응답) => {
   응답.sendFile(path.join(__dirname, "../client/build/index.html"))
 });
+
+app.post('/api/test', (요청, 응답) => {
+  console.log(요청)
+  응답.status(200).json({ success: true })
+});
