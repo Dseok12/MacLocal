@@ -3,14 +3,22 @@ import axios from "axios";
 
 const List = (props) => {
 
+  const [text, setText] = useState("");
+
   useEffect(() => {
-    axios.post('/api/test')
+
+    let body = {
+      text: 'hellow'
+    }
+
+    axios.post('/api/test', body)
     .then((res) => {
-      alert('요청성공')
+      // alert('요청성공')
       console.log(res);
+      setText(res.data.text);
     })
     .catch((error) => {
-      alert('요청실패')
+      // alert('요청실패')
       console.log(error);
     });
   },[])
@@ -18,6 +26,7 @@ const List = (props) => {
   return (
     <>
       <h1>List</h1>
+      <h3>{text}</h3>
       {props.ContentList.map((content, index) => {
         return(
           <div
