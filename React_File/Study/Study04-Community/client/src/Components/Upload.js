@@ -11,15 +11,15 @@ const Upload = (props) => {
     setContent("");
   }
 
-  useEffect(() => {
-    // 컴포넌트가 나타날 때 실행될 코드
-    // alert('upload 컴포넌트가 나타났습니다.')
-    return() => {
-      // 컴포넌트가 죽을 때 실행될 코드
-      // alert('upload 컴포넌트가 죽었습니다.')
-    }
+  // useEffect(() => {
+  //   // 컴포넌트가 나타날 때 실행될 코드
+  //   // alert('upload 컴포넌트가 나타났습니다.')
+  //   return() => {
+  //     // 컴포넌트가 죽을 때 실행될 코드
+  //     // alert('upload 컴포넌트가 죽었습니다.')
+  //   }
 
-  }, [])
+  // }, [])
 
   return (
     <>
