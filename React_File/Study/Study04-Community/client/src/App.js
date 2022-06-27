@@ -4,7 +4,6 @@ import React, {useState} from 'react';
 import Heading from './Components/Heading';
 import List from './Components/List';
 import Upload from './Components/Upload';
-// import Test from './Test';
 
 function App() {
 
