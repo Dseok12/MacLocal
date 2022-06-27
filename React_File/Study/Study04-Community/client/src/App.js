@@ -2,8 +2,8 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import React, {useState} from 'react';
 import Heading from './Components/Heading';
-import List from './Components/List';
-import Upload from './Components/Upload';
+import List from './Components/Post/List';
+import Upload from './Components/Post/Upload';
 
 function App() {
 
@@ -15,7 +15,7 @@ function App() {
       {/* <Test></Test> */}
       <Routes>
         <Route
-          path="/list"
+          path="/list "
           element={<List ContentList={ContentList} setContentList={setContentList} />} />
         <Route
           path="/upload"
