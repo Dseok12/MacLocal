@@ -11,6 +11,7 @@ const Upload = (props) => {
 
   let navigate = useNavigate();
 
+  // onSubmit
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -18,23 +19,27 @@ const Upload = (props) => {
       return alert('모든 창을 채워주세요.');
     }
 
+    // 보낼 데이터 설정
     let body = {
       title: Title,
       content: Content
     };
 
+    // 서버로 전달
     axios.post('/api/post/submit', body).then((res) => {
       if(res.data.success){
         alert('글 작성이 완료되었습니다.');
-        navigate('/');
+        navigate('/list');
       }else{
         alert('글 작성에 실패하였습니다.')
       }
     }).catch((err) => {
       console.error(`${err}`)
     });
+    // // 서버로 전달
 
   }
+  // // onSubmit
 
   return (
     <UploadDiv>

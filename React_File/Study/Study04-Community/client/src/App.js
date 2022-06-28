@@ -12,10 +12,9 @@ function App() {
   return (
     <div className="App">
       <Heading></Heading>
-      {/* <Test></Test> */}
       <Routes>
         <Route
-          path="/list "
+          path="/list"
           element={<List ContentList={ContentList} setContentList={setContentList} />} />
         <Route
           path="/upload"
