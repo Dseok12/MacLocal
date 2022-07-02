@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { Button } from 'react-bootstrap';
 import {ListDiv, ListItem} from '../../Style/ListCSS'
 
@@ -23,11 +24,14 @@ const List = (props) => {
         return(
           <div
             key={idx}
-            
           >
-            <ListItem>
-              <p className="title">{post.title}</p>
-              <p>{post.content}</p>
+            <ListItem
+              key={idx}
+            >
+              <Link to={`/post/${post.postNum}`}>
+                <p className="title">{post.title}</p>
+                <p>{post.content}</p>
+              </Link>
             </ListItem>
           </div>
         )

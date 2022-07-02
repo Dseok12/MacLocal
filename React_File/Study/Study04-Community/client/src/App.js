@@ -1,13 +1,12 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import React, {useState} from 'react';
+import React from 'react';
 import Heading from './Components/Heading';
 import List from './Components/Post/List';
 import Upload from './Components/Post/Upload';
+import Detail from './Components/Post/Detail';
 
 function App() {
-
-  const [ContentList, setContentList] = useState([]);
 
   return (
     <div className="App">
@@ -15,10 +14,13 @@ function App() {
       <Routes>
         <Route
           path="/list"
-          element={<List ContentList={ContentList} setContentList={setContentList} />} />
+          element={<List />} />
         <Route
           path="/upload"
-          element={<Upload ContentList={ContentList} setContentList={setContentList} />} />
+          element={<Upload />} />
+        <Route
+          path="/post/:postNum"
+          element={<Detail  />} />
       </Routes>
     </div>
   );
