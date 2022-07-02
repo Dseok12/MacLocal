@@ -3,10 +3,11 @@ const { default: mongoose } = require("mongoose");
 const postSchema = new mongoose.Schema({
   title: String,
   content: String,
+  postNum: Number,
 },{
-  collection:'kittens'
+  collection:'posts'
 });
 
-const Post = mongoose.model('Kitten', postSchema);
+const Post = mongoose.model('post', postSchema);
 
 module.exports = { Post }

@@ -14,6 +14,7 @@ app.use(express.urlencoded({ extended:true }));
 
 const { Post } = require('./Model/Post');
 const { exec } = require('child_process');
+const { Counter } = require('./Model/Counter');
 
 app.listen(port, () => {
   mongoose.connect(config.mongoURI).then(() => {
@@ -34,17 +35,38 @@ app.get('*', (요청, 응답) => {
 
 app.post('/api/post/submit', (req, res) => {
   let temp = req.body;
-  const CommunityPost = new Post(temp);
-  CommunityPost.save().then(() => {
-    res.status(200).json({ success: true });
-  }).catch((err) => {
-    res.status(400).json({ success: false });
+  Counter.findOne({name: 'counter'}).exec().then((counter) => {
+    temp.postNum = counter.postNum;
+    const CommunityPost = new Post(temp);
+    CommunityPost.save().then(() => {
+
+      Counter.updateOne({
+        // 어떤 doc을 update할건지 선택
+        name: 'counter'
+      }, {
+        // 그 선택한 doc을 어떻게 update할건지 선택
+        $inc: {postNum: 1}
+      }).then(() => {
+        res.status(200).json({ success: true });
+      });
+    }).catch((err) => {
+      res.status(400).json({ success: false });
+    })
   })
 });
 
 app.post('/api/post/list', (req, res) => {
   Post.find().exec().then((doc) => {
     res.status(200).json({ success: true, postList: doc });
+  }).catch((err) => {
+    res.status(400).json({ success: false });
+  })
+});
+
+app.post('/api/post/detail', (req, res) => {
+  Post.findOne({postNum: Number(req.body.postNum)}).exec().then((doc) => {
+    console.log(doc )
+    res.status(200).json({ success: true, post: doc });
   }).catch((err) => {
     res.status(400).json({ success: false });
   })
