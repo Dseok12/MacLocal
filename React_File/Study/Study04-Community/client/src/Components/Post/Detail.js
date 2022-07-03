@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Spinner } from 'react-bootstrap';
+import {
+  PostDiv,
+  SpinnerDiv,
+  Post,
+  BtnDiv
+} from '../../Style/PostDetailCSS';
 
 const Detail = () => {
 
   let params = useParams();
-  const [PostInfo, setPostInfo] = useState([]);
+  const [PostInfo, setPostInfo] = useState({});
   const [Flag, setFlag] = useState(false)
 
   useEffect(() => {
@@ -25,23 +31,33 @@ const Detail = () => {
   }, []);
 
   useEffect(() => {
-    console.log(PostInfo)
+    // console.log(PostInfo)
   }, [PostInfo]);
 
   return (
-    <div>
+    <PostDiv>
       {Flag ? (
-      <div>
-        {PostInfo.title}
-        {PostInfo.content}
-      </div>
+      <>
+        <Post>
+          <h1>{PostInfo.title}</h1>
+          <p>{PostInfo.content}</p>
+        </Post>
+        <BtnDiv>
+          <Link to={`/edit/${PostInfo.postNum}`}>
+            <button className='edit'>수정</button>
+          </Link>
+          <button className='delete'>삭제</button>
+        </BtnDiv>
+      </>
       ) : (
-        <Spinner animation="border" role="status">
-            <span className="visually-hidden">Loading...</span>
-        </Spinner>
+        <SpinnerDiv>
+          <Spinner animation="border" role="status">
+              <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        </SpinnerDiv>
       )}
       
-    </div>
+    </PostDiv>
   )
 }
 

@@ -1,14 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { UploadDiv, UploadForm, UploadButtonDiv } from "../../Style/UploadCSS";
+import axios from 'axios';
+// import { Spinner } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
-const Upload = (props) => {
+const Edit = () => {
 
+  let params = useParams();
+  const [PostInfo, setPostInfo] = useState({});
+  const [Flag, setFlag] = useState(false);
   const [Title, setTitle] = useState('')
   const [Content, setContent] = useState('');
-
   let navigate = useNavigate();
+
+  useEffect(() => {
+    let body = {
+      postNum: params.postNum,
+    };
+    axios
+      .post("/api/post/detail", body)
+      .then((response) => {
+        if (response.data.success) {
+          setPostInfo(response.data.post);
+          setFlag(true);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  // 수정을 위해 사용하는 useEffect
+  useEffect(() => {
+    setTitle(PostInfo.title);
+    setContent(PostInfo.content);
+  }, [PostInfo]);
 
   // onSubmit
   const onSubmit = (e) => {
@@ -21,16 +48,19 @@ const Upload = (props) => {
     // 보낼 데이터 설정
     let body = {
       title: Title,
-      content: Content
+      content: Content,
+      postNum: params.postNum,
     };
 
     // 서버로 전달
-    axios.post('/api/post/submit', body).then((res) => {
+    axios.post('/api/post/edit', body).then((res) => {
       if(res.data.success){
-        alert('글 작성이 완료되었습니다.');
-        navigate('/list');
+        alert('글 수정이 완료되었습니다.');
+        
+        // 수정하고 제출하면 이동하는 경로
+        navigate(`/post/${params.postNum}`);
       }else{
-        alert('글 작성에 실패하였습니다.')
+        alert('글 수정에 실패하였습니다.')
       }
     }).catch((err) => {
       console.error(`${err}`)
@@ -62,6 +92,15 @@ const Upload = (props) => {
         />
         <UploadButtonDiv>
           <button
+            className='cancel'
+            onClick={(e) => {
+              e.preventDefault();
+              navigate(-1);
+            }}
+          >
+            취소!
+          </button>
+          <button
             onClick={(e) => {
               onSubmit(e);
             }}
@@ -74,4 +113,4 @@ const Upload = (props) => {
   )
 }
 
-export default Upload;
+export default Edit
