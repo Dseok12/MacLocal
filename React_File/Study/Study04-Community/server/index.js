@@ -33,6 +33,8 @@ app.get('*', (요청, 응답) => {
   응답.sendFile(path.join(__dirname, "../client/build/index.html"))
 });
 
+
+// 데이터 보내기
 app.post('/api/post/submit', (req, res) => {
   let temp = req.body;
   Counter.findOne({name: 'counter'}).exec().then((counter) => {
@@ -57,7 +59,9 @@ app.post('/api/post/submit', (req, res) => {
   })
 });
 
+// 목록 뿌려주기
 app.post('/api/post/list', (req, res) => {
+  // find 잘 보기
   Post.find().exec().then((doc) => {
     res.status(200).json({ success: true, postList: doc });
   }).catch((err) => {
@@ -65,8 +69,9 @@ app.post('/api/post/list', (req, res) => {
   })
 });
 
-
+// 상세보기
 app.post('/api/post/detail', (req, res) => {
+  // findOne 잘 보기
   Post.findOne({postNum: Number(req.body.postNum)})
   .exec()
   .then((doc) => {
@@ -77,16 +82,29 @@ app.post('/api/post/detail', (req, res) => {
   })
 });
 
-
+// 수정하기
 app.post('/api/post/edit', (req, res) => {
   let temp = {
     title: req.body.title,
     content: req.body.content
   }
+  // updateOne 잘보기
   Post.updateOne({postNum: Number(req.body.postNum)}, {$set: temp})
   .exec()
   .then(() => {
     // console.log(doc)
+    res.status(200).json({ success: true });
+  }).catch((err) => {
+    res.status(400).json({ success: false });
+  })
+});
+
+// 삭제하기
+app.post('/api/post/delete', (req, res) => {
+  // deleteOne 잘 보기
+  Post.deleteOne({postNum: Number(req.body.postNum)})
+  .exec()
+  .then(() => {
     res.status(200).json({ success: true });
   }).catch((err) => {
     res.status(400).json({ success: false });
