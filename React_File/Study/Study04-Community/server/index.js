@@ -40,6 +40,8 @@ app.post('/api/post/submit', (req, res) => {
     const CommunityPost = new Post(temp);
     CommunityPost.save().then(() => {
 
+      // updateOne 몽고DB에서 사용하는 것.
+      // update를 해주기위해
       Counter.updateOne({
         // 어떤 doc을 update할건지 선택
         name: 'counter'
@@ -63,10 +65,29 @@ app.post('/api/post/list', (req, res) => {
   })
 });
 
+
 app.post('/api/post/detail', (req, res) => {
-  Post.findOne({postNum: Number(req.body.postNum)}).exec().then((doc) => {
-    console.log(doc )
+  Post.findOne({postNum: Number(req.body.postNum)})
+  .exec()
+  .then((doc) => {
+    console.log(doc)
     res.status(200).json({ success: true, post: doc });
+  }).catch((err) => {
+    res.status(400).json({ success: false });
+  })
+});
+
+
+app.post('/api/post/edit', (req, res) => {
+  let temp = {
+    title: req.body.title,
+    content: req.body.content
+  }
+  Post.updateOne({postNum: Number(req.body.postNum)}, {$set: temp})
+  .exec()
+  .then(() => {
+    // console.log(doc)
+    res.status(200).json({ success: true });
   }).catch((err) => {
     res.status(400).json({ success: false });
   })
