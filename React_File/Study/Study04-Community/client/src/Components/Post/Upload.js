@@ -3,10 +3,13 @@ import { UploadDiv, UploadForm, UploadButtonDiv } from "../../Style/UploadCSS";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+import ImageUpload from "./ImageUpload";
+
 const Upload = (props) => {
 
   const [Title, setTitle] = useState('')
   const [Content, setContent] = useState('');
+  const [Image, setImage] = useState('');
 
   let navigate = useNavigate();
 
@@ -21,7 +24,8 @@ const Upload = (props) => {
     // 보낼 데이터 설정
     let body = {
       title: Title,
-      content: Content
+      content: Content,
+      image: Image,
     };
 
     // 서버로 전달
@@ -52,7 +56,9 @@ const Upload = (props) => {
             setTitle(e.currentTarget.value);
           }}
         />
-
+        <ImageUpload
+          setImage={setImage}
+        />
         <label htmlFor="content">내용</label>
         <textarea
           value={Content}
