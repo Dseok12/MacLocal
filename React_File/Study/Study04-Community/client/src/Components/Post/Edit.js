@@ -4,6 +4,7 @@ import { UploadDiv, UploadForm, UploadButtonDiv } from "../../Style/UploadCSS";
 import axios from 'axios';
 // import { Spinner } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
+import ImageUpload from './ImageUpload';
 
 const Edit = () => {
 
@@ -12,6 +13,7 @@ const Edit = () => {
   const [Flag, setFlag] = useState(false);
   const [Title, setTitle] = useState('')
   const [Content, setContent] = useState('');
+  const [Image, setImage] = useState('');
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -82,7 +84,9 @@ const Edit = () => {
             setTitle(e.currentTarget.value);
           }}
         />
-
+        <ImageUpload
+          setImage={setImage}
+        />
         <label htmlFor="content">내용</label>
         <textarea
           value={Content}
