@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const multer  = require('multer');
+// const multer  = require('multer');
 
 const { Post } = require('../Model/Post');
 const { Counter } = require('../Model/Counter');
@@ -112,7 +112,7 @@ router.post('/image/upload', (req,res) => {
 })
 */
 router.post('/image/upload', setUpload('react-community01/post'),  (req, res, next ) => {
-  res.status(200).json({ success: true, filePath: res.req.file.location  })
+  res.status(200).json({ success: true, filePath: res.req.file.location})
 })
 
 module.exports = router;
