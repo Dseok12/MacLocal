@@ -5,6 +5,8 @@ const multer  = require('multer');
 const { Post } = require('../Model/Post');
 const { Counter } = require('../Model/Counter');
 
+const setUpload = require('../Util/upload.js');
+
 // 데이터 보내기
 router.post('/submit', (req, res) => {
   let temp = req.body;
@@ -82,6 +84,7 @@ router.post('/delete', (req, res) => {
   })
 });
 
+/*
 // 멀터 라이브러리
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -106,6 +109,10 @@ router.post('/image/upload', (req,res) => {
       res.status(200).json({ success: true, filePath: res.req.file.path })
     }
   })
+})
+*/
+router.post('/image/upload', setUpload('react-community01/post'),  (req, res, next ) => {
+  res.status(200).json({ success: true, filePath: res.req.file.location  })
 })
 
 module.exports = router;
