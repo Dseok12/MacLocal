@@ -9,13 +9,14 @@ const Heading = () => {
     <>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="/">Hello, React</Navbar.Brand>
+          <Navbar.Brand href="/">커뮤니티</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/list">리스트</Nav.Link>
               <Nav.Link href="/upload">업로드</Nav.Link>
+              <Nav.Link href="/list">리스트</Nav.Link>
+              <Nav.Link href="/login">Login</Nav.Link>
+              <Nav.Link href="/register">회원가입</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

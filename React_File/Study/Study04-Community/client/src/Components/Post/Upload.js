@@ -9,7 +9,7 @@ const Upload = (props) => {
 
   const [Title, setTitle] = useState('')
   const [Content, setContent] = useState('');
-  const [Image, setImage] = useState('');
+  const [Image, setImage] = useState("");
 
   let navigate = useNavigate();
 
@@ -56,9 +56,7 @@ const Upload = (props) => {
             setTitle(e.currentTarget.value);
           }}
         />
-        <ImageUpload
-          setImage={setImage}
-        />
+        <ImageUpload setImage={setImage} />
         <label htmlFor="content">내용</label>
         <textarea
           value={Content}

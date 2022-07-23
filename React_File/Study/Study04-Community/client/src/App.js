@@ -7,6 +7,9 @@ import Upload from './Components/Post/Upload';
 import Detail from './Components/Post/Detail';
 import Edit from './Components/Post/Edit';
 
+import Login from './Components/User/Login';
+import Register from './Components/User/Register';
+
 function App() {
 
   return (
@@ -25,6 +28,12 @@ function App() {
         <Route
           path="/edit/:postNum"
           element={<Edit  />} />
+        <Route
+          path="/login"
+          element={<Login />} />
+        <Route
+          path="/register"
+          element={<Register />} />
       </Routes>
     </div>
   );
