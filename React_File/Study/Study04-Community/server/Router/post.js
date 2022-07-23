@@ -112,7 +112,8 @@ router.post('/image/upload', (req,res) => {
 })
 */
 router.post('/image/upload', setUpload('react-community01/post'),  (req, res, next ) => {
+  console.log(res.req )
   res.status(200).json({ success: true, filePath: res.req.file.location})
 })
 
-module.exports = router;
+module.exports = router; 

@@ -12,7 +12,7 @@ app.use('/image', express.static('./image'))
 app.use(express.json());
 app.use(express.urlencoded({ extended:true }));
 
-// express router 분리하기
+// express router 분리하기 
 app.use('/api/post', require('./Router/post.js'));
 
 
