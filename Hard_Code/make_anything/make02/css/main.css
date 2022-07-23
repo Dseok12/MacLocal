@@ -1,3 +1,15 @@
 @charset "utf-8";
 
-
+.box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.total{
+  font-size: 3rem;
+  font-weight: bold;
+  display: block;
+  padding-top: 100px;
+  margin-bottom: 20px;
+}
