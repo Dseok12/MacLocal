@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
 import LoginDiv from '../../Style/UserCSS.js';
+import Firebase from '../../firebase.js';
+import { async } from '@firebase/util';
+
+
 
 const Register = () => {
 
@@ -7,6 +11,24 @@ const Register = () => {
   const [ReEmail, setReEmail] = useState('')
   const [PW1, setPW1] = useState('')
   const [PW2 , setPW2] = useState('')
+
+  const RegisterFunc = async (e) => {
+    e.preventDefault();
+    if(!(Name && ReEmail && PW1 && PW2)){
+      return alert('모든 값을 채워주세요')
+    }
+
+    if(PW1 != PW2){
+      return alert('비밀번호다 틀립니다.')
+    }
+
+    let createUser = await Firebase.auth().createUserWithEmailAndPassword(ReEmail, PW1);
+    await createUser.user.updateProfile({
+      displayName: Name,
+    });
+
+    console.log(createUser.user)
+  }
 
   return (
     <LoginDiv>
@@ -39,7 +61,9 @@ const Register = () => {
           alue={PW2}
           onChange={(e) => setPW2(e.currentTarget.value)}
         />
-        <button>회원가입</button>
+        <button
+          onClick={(e) => RegisterFunc(e)}
+        >회원가입</button>
       </form>
     </LoginDiv>
   )
