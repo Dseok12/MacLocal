@@ -13,9 +13,8 @@ const btnCall = () => {
     e.preventDefault();
     const inputText = _get('.text_input');
     const listUl = _get('.list_box');
-    // listUl.createElement('li');
     listUl.innerHTML = `
-    <li class="list_item">${inputText.value}</li>
+      <li class="list_item">${inputText.value}</li>
     `
     // listItem.innerText = inputText.value;
     if(inputText.value == ''){
