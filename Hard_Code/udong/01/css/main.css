@@ -3,5 +3,6 @@
 .box{border: 1px solid #000;border-radius: 5px;}
 .list_box{padding: 30px 20px 50px 20px;}
 .box form{display: flex; align-items: center; justify-content: center;}
-.box form .text_input{width: 80%;padding: 30px 10px;}
-.box form .btn{width: 20%;padding: 30px 10px;}
+.box form .text_input{width: 60%;padding: 30px 10px;}
+.box form .btn{width: 20%;padding: 30px 10px; margin: 0;}
+.box form .reset_btn{width: 20%;padding: 30px 10px; margin: 0;}
