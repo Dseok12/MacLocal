@@ -1,7 +1,8 @@
 @charset "utf-8";
 .wrap{width: 80%;margin: 100px auto;}
-.box{border: 1px solid #000;border-radius: 5px;}
+.box{border: 1px solid #000;border-radius: 5px;overflow: hidden;}
 .list_box{padding: 30px 20px 50px 20px;}
+.list_item{font-weight: bold;}
 .box form{display: flex; align-items: center; justify-content: center;}
 .box form .text_input{width: 60%;padding: 30px 10px;}
 .box form .btn{width: 20%;padding: 30px 10px; margin: 0;}
