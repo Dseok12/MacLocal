@@ -6,7 +6,16 @@ $(document).scroll(function(){
   } else {
     $('.header').removeClass('on')
   }
-  
+
+  var scrollMainValue = $('.main').offset().top;
+  console.log(scrollMainValue);
+
+  if($(window).scrollTop() >= scrollMainValue-50){
+    $('.main').css('background', 'blue')
+  } else {
+    $('.main').css('background', '#fff')
+  }
+
 })
 
 
