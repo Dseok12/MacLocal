@@ -1,0 +1,13 @@
+@charset "utf-8";
+.header{width: 100%;border-bottom: 1px solid #000;}
+.header.on{background: #000; color: #fff;position: fixed;transition: all .2s;}
+.inner{max-width: calc(100% - 200px);margin: 0 auto;}
+.header_inner{display: flex; align-items: center; justify-content: space-between;padding: 30px 0;}
+.header_inner .logo{font-size: 1.7rem; font-weight: bold;}
+.menu_wrap{width: 30%;}
+.menu_box{display: flex;align-items: center;}
+.menu_box li{margin-right: 5%;}
+.menu_box li a{color: #000; text-decoration: none;}
+.header.on .menu_box li a{color: #fff; text-decoration: none;}
+
+.main{height: 1000px;}
