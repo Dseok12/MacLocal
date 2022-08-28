@@ -1,1 +1,6 @@
-.inner{width: calc(100% - 300px);margin: 0 auto;}
+.App{width: 100%;}
+.Wrap{width: 100%;}
+.HederWrap{border-bottom: 1px solid rgb(244, 59, 179);}
+.BodyWrap{padding: 50px 0;}
+.FooterWrap{border-top: 1px solid rgb(244, 59, 179);}
+.inner{width: calc(100% - 300px);margin: 0 auto;position: relative;}

@@ -3,12 +3,30 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  .logo{
+    a{
+      font: bold 26px sans-serif;
+      color: rgb(244, 59, 179);
+      transition: all .3s;
+      &:hover{
+        color: #111;
+      }
+    }
+  }
   .menu_box{
     display: flex;
     align-items: center;
     justify-content: center;
     li{
       margin-right: 20px;
+      a{
+        color: #111;
+        transition: all .3s;
+        &:hover{
+          color: rgb(244, 59, 179);
+          text-decoration: underline;
+        }
+      }
       &:last-child{
         margin-right: 0;
       }
