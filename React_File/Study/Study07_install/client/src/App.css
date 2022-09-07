@@ -1,0 +1,7 @@
+.TotalWrap {
+  width: 100%;
+}
+.inner {
+  width: calc(100% - 350px);
+  margin: 0 auto;
+}

@@ -1,0 +1,11 @@
+.HeaderWrap {
+  width: 100%;
+  border-bottom: 1px solid #000;
+  .inner {
+    padding: 1rem 0;
+    h1 {
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+  }
+}
