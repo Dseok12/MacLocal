@@ -1,6 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function List(props) {
+  const [Text, setText] = useState('');
+  useEffect(() => {
+    let body = {
+      text: 'hello',
+    };
+    axios
+      .post('/api/test', body)
+      .then((response) => {
+        console.log(response);
+        setText(response.data.text);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   const [Contents, setContents] = useState('');
 
   const onSubmit = () => {
@@ -21,6 +38,7 @@ function List(props) {
       {props.ContetnList.map((변수이름1, 인덱스) => {
         return <div key={인덱스}>내용: {변수이름1}</div>;
       })}
+      <h3>{Text}</h3>
     </>
   );
 }
