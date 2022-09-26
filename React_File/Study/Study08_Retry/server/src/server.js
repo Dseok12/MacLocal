@@ -12,9 +12,10 @@ app.use(express.json());
 
 app.use(express, urlencoded({ extended: true }));
 
+const { Post } = require('../Model/Post.js');
 app.listen(port, () => {
   mongoose
-    .connect('디비URL 들어갈 자리')
+    .connect('mongodb+srv://admin123:admin123@cluster0.ubu9s3t.mongodb.net/Community?retryWrites=true&w=majority')
     .then(() => {
       console.log(`Example app listening on port ${port}`);
       console.log('Connecting mongoDB...');
@@ -33,6 +34,9 @@ app.get('*', (요청, 응답) => {
 });
 
 app.post('/api/test', (요청, 응답) => {
-  console.log(요청.body);
-  응답.status(200).json({ success: true, text: '안녕하세요.' });
+  // console.log(요청.body);
+  const CommunityPost = new Post({ title: 'test', content: '테스트입니다.' });
+  CommunityPost.save().then(() => {
+    응답.status(200).json({ success: true, text: '안녕하세요.' });
+  });
 });
