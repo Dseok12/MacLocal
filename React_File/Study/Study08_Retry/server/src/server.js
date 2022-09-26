@@ -15,7 +15,7 @@ app.use(express, urlencoded({ extended: true }));
 const { Post } = require('../Model/Post.js');
 app.listen(port, () => {
   mongoose
-    .connect('mongodb+srv://admin123:admin123@cluster0.ubu9s3t.mongodb.net/Community?retryWrites=true&w=majority')
+    .connect('')
     .then(() => {
       console.log(`Example app listening on port ${port}`);
       console.log('Connecting mongoDB...');
