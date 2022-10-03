@@ -1,0 +1,17 @@
+import './App.css';
+import './Reset.css';
+import Header from './components/Header/Header';
+import Body from './components/Body/Body';
+import Footer from './components/Footer/Footer';
+
+function App() {
+  return (
+    <div className="Wrap">
+      <Header />
+      <Body />
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
