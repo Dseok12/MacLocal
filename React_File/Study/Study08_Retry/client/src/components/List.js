@@ -4,34 +4,31 @@ import axios from 'axios';
 function List(props) {
   const [Text, setText] = useState('');
   useEffect(() => {
-    let body = {
-      text: 'hello',
-    };
     axios
-      .post('/api/test', body)
-      .then((response) => {
-        console.log(response);
-        setText(response.data.text);
+      .post('/api/test')
+      .then((res) => {
+        console.log(res);
+        setText(res.data.text);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
-  const [Contents, setContents] = useState('');
+  // const [Contents, setContents] = useState('');
 
-  const onSubmit = () => {
-    /**
-     * React에서 배열을 다루는 공식
-    let tempArr = [...ContetnList];
-    tempArr.push(Contents);
-    setContetnList([...tempArr]);
-     */
-    let tempArr = [...props.ContetnList];
-    tempArr.push(Contents);
-    props.setContetnList([...tempArr]);
-    props.setContents('');
-  };
+  // const onSubmit = () => {
+  //   /**
+  //     React에서 배열을 다루는 공식
+  //     let tempArr = [...ContetnList];
+  //     tempArr.push(Contents);
+  //     setContetnList([...tempArr]);
+  //    */
+  //   let tempArr = [...props.ContetnList];
+  //   tempArr.push(Contents);
+  //   props.setContetnList([...tempArr]);
+  //   props.setContents('');
+  // };
 
   return (
     <>
