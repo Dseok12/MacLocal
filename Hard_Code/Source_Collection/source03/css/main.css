@@ -22,8 +22,6 @@
 .tab_box p.on {
   color: red;
 }
-.content_box {
-}
 .content_box p {
   display: none;
 }
