@@ -36,7 +36,11 @@ app.get('*', (요청, 응답) => {
 app.post('/api/test', (요청, 응답) => {
   // console.log(요청.body);
   const CommunityPost = new Post({ title: 'test', content: '테스트입니다.' });
-  CommunityPost.save().then(() => {
-    응답.status(200).json({ success: true, text: '안녕하세요.' });
-  });
+  CommunityPost.save()
+    .then(() => {
+      응답.status(200).json({ success: true, text: '안녕하세요.' });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
