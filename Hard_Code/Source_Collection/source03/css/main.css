@@ -1,3 +1,32 @@
 @charset "utf-8";
+.wrap {
+  width: 800px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
 
-
+.tab_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.tab_box p {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+.tab_box p.on {
+  color: red;
+}
+.content_box {
+}
+.content_box p {
+  display: none;
+}
+.content_box p.on {
+  display: block;
+}
