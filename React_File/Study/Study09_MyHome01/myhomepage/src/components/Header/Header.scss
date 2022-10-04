@@ -1,0 +1,28 @@
+.HeaderWrap{
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  .inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    .logo{
+      h1{
+        font-size: 25px;
+        font-weight: 800;
+      }
+    }
+    .menu_box{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      li{
+        margin-right: 10px;
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
