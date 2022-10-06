@@ -1,0 +1,63 @@
+.FooterWrap{
+  width: 100%;
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+  background: rgb(245, 245, 245);
+  .inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .footer_logo{
+      a{
+        font-size: 25px;
+        font-weight: 800;
+        color: #000;
+      }
+    }
+    .copy_rigth_box{
+      .copy_right{
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+    .contact_wrap{
+      .contact_box{
+        display: flex;
+        flex-direction: column;
+        li{
+          margin-top: 10px;
+          color: rgb(91, 91, 254);
+          font-weight: bold;
+          :first-child{
+            margin-top: 0;
+          }
+          a{
+            text-align: center;
+            color: rgb(91, 91, 254);
+            font-weight: bold;
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    .sns_wrap{
+      .sns_box{
+        li{
+          margin-top: 10px;
+          &:first-child{
+            margin-top: 0;
+          }
+          a{
+            color: #111;
+            font-weight: 600;
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
