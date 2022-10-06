@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.scss';
+// import logo from '../../assets/img/logo.png';
 import { Link } from 'react-router-dom';
 
 function Footer() {
@@ -7,7 +8,11 @@ function Footer() {
     <div className='FooterWrap'>
       <div className='inner'>
         <h2 className='footer_logo'>
-          <Link to='/'>Logo</Link>
+          <Link to='/'>
+            {/* <img src={logo}/> */}
+            {/* <img src="../../../public/assets/img/logo.png"/> */}
+            Logo
+          </Link>
         </h2>
         <div className='copy_rigth_box'>
           <p className='copy_right'>CopyRightⒸ 2022 Make D.seok</p>
