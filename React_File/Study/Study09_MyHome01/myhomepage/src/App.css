@@ -1,4 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800');
 body *{font-family: 'Nanum Gothic',serif;}
 .Wrap{width: 100%;position: relative;}
-.inner{width: calc(100% - 300px); margin: 0 auto;position: relative;}
+.inner{width: calc(100% - 200px); margin: 0 auto;position: relative;}

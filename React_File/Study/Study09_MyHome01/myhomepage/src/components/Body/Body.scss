@@ -1,0 +1,72 @@
+.BodyWrap{
+  .topVi{
+    width: 100%;
+    .inner{
+      padding: 0px 0 30px;
+      .top_slider{
+        width: 100%;
+        .swiper-button-prev{
+          left: -30px;
+        }
+        .swiper-button-next{
+          right: -30px;
+        }
+        .slide_txt_01{
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          padding: 30px 0;
+          p{
+            text-align: center;
+            font-weight: 400;
+            font-size: 20px;
+            span{
+              display: block;
+              color: rgb(16, 103, 253);
+              font-size: 24px;
+              font-weight: 800;
+              margin-top: 10px;
+            }
+          }
+          .ani_turn{
+            animation: Turn01 30s infinite linear alternate;
+          }
+        }
+        .swiper-pagination{
+          position: absolute;
+          left: 0;
+          bottom: 25px;
+          .swiper-pagination-bullet{
+            width: 20px;
+            height: 20px;
+          }
+          .swiper-pagination-active{
+            background: rgb(16, 103, 253);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@-webkit-keyframes Turn01 {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes Turn01 {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}

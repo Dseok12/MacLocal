@@ -9,10 +9,15 @@
     padding: 15px 0;
     .logo{
       h1{
+        width: 80px;
         a{
+          display: inline-block;
           font-size: 25px;
           font-weight: 800;
           color: #111;
+          img{
+            width: 100%;
+          }
         }
       }
     }
@@ -26,6 +31,7 @@
           margin-right: 0;
         }
         a{
+          font-size: 20px;
           font-weight: 600;
           color: #111;
           transition: all .3s;

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.scss';
-// import logo from '../../assets/img/logo.png';
+import logo from '../../assets/img/logo.png';
 import { Link } from 'react-router-dom';
 
 function Footer() {
@@ -9,9 +9,9 @@ function Footer() {
       <div className='inner'>
         <h2 className='footer_logo'>
           <Link to='/'>
-            {/* <img src={logo}/> */}
+            <img src={logo}/>
             {/* <img src="../../../public/assets/img/logo.png"/> */}
-            Logo
+            {/* Logo */}
           </Link>
         </h2>
         <div className='copy_rigth_box'>
