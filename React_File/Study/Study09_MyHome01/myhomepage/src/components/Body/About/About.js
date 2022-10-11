@@ -24,6 +24,7 @@ function About() {
     <div className='AboutWrap'>
       <div className='inner'>
         <p>{getData}</p>
+        <p>{}</p>
         <p>About</p>
       </div>
     </div>
