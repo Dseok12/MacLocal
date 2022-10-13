@@ -1,29 +1,27 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+axios.defaults.withCredentials = true;
 
 function About() {
+
 
   const [getData, setGetData] = useState([]);
 
   useEffect(() => {
     axios.get('https://api.instantwebtools.net/v1/airlines')
     .then((res) => {
-      console.log(res.data[0].name);
+      console.log(res.data);
+      setGetData(res.data);
       console.log('성공');
-      setGetData(res.data[0].name);
-      // for(let i = 0; i <= res.data.length; i++){
-      //   setGetData(res.data[i].name);
-      // }
     }).catch((err) => {
       console.error(err);
-      console.log('실패')
-    });
+      console.log(err)
+    })
   }, []);
 
   return (
     <div className='AboutWrap'>
       <div className='inner'>
-        <p>{getData}</p>
         <p>{}</p>
         <p>About</p>
       </div>
