@@ -1,0 +1,13 @@
+@import '../../reset.scss';
+
+.BodyWrap{
+  .inner{
+    h1{
+      color: $MainColor;
+      font-weight: $bold;
+      border: 1px solid #000;
+      background-color: #f1f1f1;
+      padding: 10px;
+    }
+  }
+}
