@@ -4,8 +4,11 @@ import axios from 'axios';
 function List(props) {
   const [Text, setText] = useState('');
   useEffect(() => {
+    let body = {
+      text: 'hellow',
+    };
     axios
-      .post('/api/test')
+      .post('/api/test',body)
       .then((res) => {
         console.log(res);
         setText(res.data.text);
