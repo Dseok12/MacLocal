@@ -48,6 +48,8 @@ const Home = () => {
   //   },
   // ];
 
+  console.log(posts);
+
   return (
     <div className='home'>
       <div className="posts">
