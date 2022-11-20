@@ -9,7 +9,8 @@ export const getPosts = (req, res) => {
   });
 }
 export const getPost = (req, res) => {
-  res.json("from controller")
+  const q = "SELECT `username`, `title`, `desc`, `img`, `cat`, `cat` FROM user u JOIN posts p ON u.id===p.uid WHERE p.id=?"
+
 }
 export const addPost = (req, res) => {
   res.json("from controller")

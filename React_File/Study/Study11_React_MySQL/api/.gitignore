@@ -1,3 +1,5 @@
 node_modules
 ps.txt
 .env
+
+./db.js
