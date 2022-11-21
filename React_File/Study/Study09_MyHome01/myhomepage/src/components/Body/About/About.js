@@ -8,7 +8,9 @@ function About() {
   const [getData, setGetData] = useState([]);
 
   useEffect(() => {
-    axios.get('https://api.instantwebtools.net/v1/airlines')
+    axios.get('https://api.instantwebtools.net/v1/airlines',{ 
+       withCredentials: true // 쿠키 cors 통신 설정
+    })
     .then((res) => {
       console.log(res.data);
       setGetData(res.data);
