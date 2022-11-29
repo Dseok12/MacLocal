@@ -24,9 +24,9 @@ const Home = () => {
   // const posts = [
   //   {
   //     id: 1,
-  //     title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+  //     title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",https://images.pexels.com/photos/7008010/pexels-photo-7008010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
   //     desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!",
-  //     img: "https://images.pexels.com/photos/7008010/pexels-photo-7008010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  //     img: "",
   //   },
   //   {
   //     id: 2,
@@ -71,7 +71,7 @@ const Home = () => {
           <p>
             <a href="https://www.youtube.com/watch?v=0aPLk2e2Z3g&t=1089s">링크</a>
           </p>
-          연습: 1:45:07
+          연습: 1:57:07
         </div>
       </div>
     </div>
