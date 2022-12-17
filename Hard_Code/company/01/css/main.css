@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+.innerBg{width: 1010px;margin: 100px auto 0;}
+.contWrap{position: relative; display: flex; flex-direction: column;}
+.obj{position: absolute;left: 0;top: 0;}
+.obj01{top: -40px;}
+.obj02{top: 150px;}
+.obj03{top: 280px;}
+.obj04{top: 470px;}
+.flo {position: absolute;}
+.pil01{right: -200px;}
+.pil02{right: -400px;}
+.pil03{right: -700px;}
+.pil04{right: -900px;}
+.pil01_01{right: -200px;}
+.pil02_01{right: -400px;}
+.pil03_01{right: -700px;}
+.pil04_01{right: -900px;}
+.pil01_02{right: -200px;}
+.pil02_02{right: -400px;}
+.pil03_02{right: -700px;}
+.pil04_02{right: -900px;}
+.pil01_03{right: -200px;}
+.pil02_03{right: -400px;}
+.pil03_03{right: -700px;}
+.pil04_03{right: -900px;}
+.obj img{display: none;}
+.on{display: block !important;}
+
