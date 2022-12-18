@@ -1,7 +1,3 @@
-// setInterval(function(){
-//   $('.obj').children('img').toggleClass('on')
-// }, 1000)
-
 function updateDivs() {
   const parentDivs = document.querySelectorAll('.obj');
 
@@ -18,9 +14,3 @@ function updateDivs() {
 }
 updateDivs();
 setInterval(updateDivs, 1000);
-
-
-
-
-
-
