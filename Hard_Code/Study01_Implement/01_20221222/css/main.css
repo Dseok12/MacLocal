@@ -1,3 +1,9 @@
 @charset "utf-8";
-
-
+.tab01Wrap{width: 100%;}
+.tab01_list{}
+.tab01_list li{float: left;width: 200px;border: 1px solid #111;padding: 10px 0;text-align: center;cursor: pointer;}
+.tab01_list li:hover a, .tab01_list li.on a{color: red; font-weight: bold;}
+.tab01_list li a{display: block; color: #000;}
+.tab01_item{width: 100%;}
+.tab01_item li{text-align: center;padding: 20px;border: 1px solid #111;border-top: none; display: none;}
+.tab01_item li.on{display: block;}
