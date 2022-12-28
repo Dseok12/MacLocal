@@ -1,5 +1,20 @@
 @charset "utf-8";
 .tabWrap{width: 1010px;margin: 0 auto;}
-.tabWrap .tab_list{}
-.tabWrap .tab_list li{float: left;}
-.tabWrap .tab_list li a{}
+/* .tabWrap .tab_list{} */
+.tabWrap .tab_list > li{float: left;width: 19.88%;border: 1px solid #000; border-right: none; text-align: center;}
+.tabWrap .tab_list > li:last-child{border-right: 1px solid #000;}
+.tabWrap .tab_list > li a{display: block; color: #111; padding: 10px 0px;}
+
+.tab_item{border: 1px solid #000;border-top: none;padding: 0 20px 20px 20px;}
+.tab_item > li{float: left; width: 100%;margin-top: 10px; display: none;}
+
+.tabWrap02{}
+.tabWrap02 .tab_list02{}
+.tabWrap02 .tab_list02 > li{float: left;width: 33.19%; border: 1px solid #000; border-right: none; text-align: center;}
+.tabWrap02 .tab_list02 > li:last-child{border-right: 1px solid #000;}
+.tabWrap02 .tab_list02 > li a{ display: block; color: #888;padding: 10px 0;}
+
+.tabWrap02 .tab_item02{}
+.tabWrap02 .tab_item02 li{text-align: center;padding: 20px 0;border: 1px solid #000; border-top: none; display: none;}
+
+.tab_on{display: block !important;}
