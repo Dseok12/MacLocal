@@ -1,3 +1,5 @@
 @charset "utf-8";
-
-
+.tabWrap{width: 1010px;margin: 0 auto;}
+.tabWrap .tab_list{}
+.tabWrap .tab_list li{float: left;}
+.tabWrap .tab_list li a{}
