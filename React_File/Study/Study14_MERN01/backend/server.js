@@ -4,11 +4,21 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-const app = express()
+const app = express();
 
-const PORT = process.env.PORT || 5050;
+// MiddleWares
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+
+// Routes
+app.get("/", (req, res) => {
+  res.send("Home Page")
+})
 
 // Connect to DB and Start Server
+const PORT = process.env.PORT || 5050;
 
 mongoose.set("strictQuery", false);
 mongoose
@@ -24,5 +34,5 @@ mongoose
 
 /**
  * https://www.youtube.com/watch?v=wlxx3SCHZKk&t=174s
- * 43:50 / 5:18:48
+ * 1:11:09 / 5:18:48
  */
