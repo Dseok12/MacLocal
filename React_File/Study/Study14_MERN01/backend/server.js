@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const userRoute = require("./routes/userRoute")
 
 const app = express();
 
@@ -10,6 +11,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+// Routes MiddleWares
+app.use("/api/users", userRoute);
 
 
 // Routes
@@ -34,5 +38,5 @@ mongoose
 
 /**
  * https://www.youtube.com/watch?v=wlxx3SCHZKk&t=174s
- * 1:11:09 / 5:18:48
+ * 1:16:36 / 5:18:48
  */
