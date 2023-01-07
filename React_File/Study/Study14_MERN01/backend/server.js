@@ -3,7 +3,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const userRoute = require("./routes/userRoute")
+const userRoute = require("./routes/userRoute");
+const errorHandler = require("./middleWare/errorMiddleware");
 
 const app = express();
 
@@ -19,7 +20,10 @@ app.use("/api/users", userRoute);
 // Routes
 app.get("/", (req, res) => {
   res.send("Home Page")
-})
+});
+
+// Error Middleware
+app.use(errorHandler)
 
 // Connect to DB and Start Server
 const PORT = process.env.PORT || 5050;
