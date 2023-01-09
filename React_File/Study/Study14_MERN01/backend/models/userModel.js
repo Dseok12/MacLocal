@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 
 const userSchema = mongoose.Schema({
   name:{
@@ -19,7 +20,7 @@ const userSchema = mongoose.Schema({
     type: String,
     required: [true, "비밀번호를 입력해주세요."],
     minLength: [6, "6글자 이상 입력해주세요"],
-    maxLength: [23, "23글자 이하 입력해주세요"],
+    // maxLength: [23, "23글자 이하 입력해주세요"],
   },
   photo: {
     type: String,
@@ -38,6 +39,21 @@ const userSchema = mongoose.Schema({
 }, {
   timestamps: true,
 });
+
+// 비밀번호 암호화해서 DB에 저장하기
+userSchema.pre("save", async function(next){
+
+  if(!this.isModified("password")){
+    return next();
+  }
+
+  // Hash password
+  const salt = await bcrypt.genSalt(10);
+  const hashedPassword = await bcrypt.hash(this.password, salt);
+  this.password = hashedPassword;
+  next();
+
+})
 
 const User = mongoose.model("User", userSchema);
 module.exports = User
