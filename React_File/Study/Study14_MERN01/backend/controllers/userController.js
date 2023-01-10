@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 
 // 데이터베이스에 토큰 넣기
 const generateToken = (id) => {
-  jwt.sign({id}, process.env.JWT_SECRET, {expiresIn:"1d"})
+  return jwt.sign({id}, process.env.JWT_SECRET, {expiresIn:"1d"})
 }
 
 const registerUser = asyncHandler(async (req, res) => {
@@ -37,7 +37,16 @@ const registerUser = asyncHandler(async (req, res) => {
   });
 
   // Generate Token 데이터베이스에 토큰 넣기
-  const token = generateToken(user._id)
+  const token = generateToken(user._id);
+
+  // Send HTTP-only Cookie
+  res.cookie("token", token, {
+    path: "/",
+    httpOnly: true,
+    expires: new Date(Date.now() + 1000 * 86400), // 1day
+    sameSite: "none",
+    secure: true
+  })
 
   if(user) {
     const {_id, name, email, photo, phone, bio} = user
