@@ -43,10 +43,10 @@ const registerUser = asyncHandler(async (req, res) => {
   res.cookie("token", token, {
     path: "/",
     httpOnly: true,
-    expires: new Date(Date.now() + 1000 * 86400), // 1day
+    expires: new Date(Date.now() + 1000 * 86400), // 1 day
     sameSite: "none",
-    secure: true
-  })
+    secure: true,
+  });
 
   if(user) {
     const {_id, name, email, photo, phone, bio} = user

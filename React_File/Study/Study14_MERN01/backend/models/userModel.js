@@ -41,9 +41,8 @@ const userSchema = mongoose.Schema({
 });
 
 // 비밀번호 암호화해서 DB에 저장하기
-userSchema.pre("save", async function(next){
-
-  if(!this.isModified("password")){
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
     return next();
   }
 
@@ -52,8 +51,7 @@ userSchema.pre("save", async function(next){
   const hashedPassword = await bcrypt.hash(this.password, salt);
   this.password = hashedPassword;
   next();
-
-})
+});
 
 const User = mongoose.model("User", userSchema);
 module.exports = User
