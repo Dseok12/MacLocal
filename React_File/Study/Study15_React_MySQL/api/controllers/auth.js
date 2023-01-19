@@ -30,6 +30,23 @@ export const register = (req,res) => {
 }
 export const login = (req,res) => {
 
+  // 사용자 확인
+  const q = "SELECT * FROM users WHERE username = ?"
+
+  db.query(q, [req, body, username], (err, data) => {
+    if(err) return register.json(err);
+    if(data.length === 0) return res.status(404).json("사용자를 찾지 못했습니다.");
+    
+    // 비밀번호 확인
+    const isPasswordCorrect = bcrypt.compareSync(req.body.password, data[0].password);
+
+    if(!isPasswordCorrect) return res.status(400).json("아이디 및 비밀번호를 잘못 입력하셨습니다.")
+
+    
+  })
+
+
+
 }
 export const logout = (req,res) => {
 
