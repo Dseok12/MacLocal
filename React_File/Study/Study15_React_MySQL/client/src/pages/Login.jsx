@@ -1,16 +1,39 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useState} from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios';
 
 const Login = () => {
+
+  const [inputs, setInputs] = useState({
+    username: "",
+    password: ""
+  });
+  const [err, setError] = useState(null);
+
+  const navigate = useNavigate()
+
+  const handleChange = (e) => {
+    setInputs(prev => ({...prev, [e.target.name]: e.target.value}))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      await axios.post("/auth/login", inputs);
+      navigate("/login")
+    } catch(err) {
+      setError(err.response.data)
+    }
+  };
+
   return (
     <div className='auth'>
       <h1>Login</h1>
       <form>
-        <input type="text" placeholder='아이디를 입력하세요' />
-        <input type="email" placeholder='이메일을 입력하세요' />
-        <input type="password" placeholder='비밀번호를 입력하세요' />
-        <button>Login</button>
-        <p>오류입니다!</p>
+        <input type="text" placeholder='아이디를 입력하세요' name='username' onChange={handleChange} />
+        <input type="password" placeholder='비밀번호를 입력하세요' name='password' onChange={handleChange} />
+        <button onClick={handleSubmit}>Login</button>
+        {err && <p>오류입니다!</p>}
         <span>아이디가 없으세요?</span> <Link to="/register">회원가입하기</Link>
         {/* <span>로그인을 하세요.</span> <Link to="/login">로그인</Link> */}
       </form>
