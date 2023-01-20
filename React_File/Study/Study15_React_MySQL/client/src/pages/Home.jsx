@@ -52,7 +52,7 @@ const Home = () => {
         <p>
           <a href="https://www.youtube.com/watch?v=0aPLk2e2Z3g&t=1089s">링크</a>
         </p>
-        연습: 1:22:41
+        연습: 1:36:21
       </div>
     </div>
   )
