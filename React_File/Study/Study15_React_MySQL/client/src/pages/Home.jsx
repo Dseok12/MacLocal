@@ -1,22 +1,25 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Home = () => {
 
   const [posts, setPosts] = useState([]);
 
+  const cat = useLocation().search;
+
+
   useEffect(() => {
     const fetchData = async () => {
       try{
-        const res = await axios.get("/posts")
+        const res = await axios.get(`/posts${cat}`)
         setPosts(res.data)
       }catch(err){
         console.log(err);
       }
     }
     fetchData();
-  }, [])
+  }, [cat]);
 
   // const posts = [
   //   {
@@ -67,7 +70,7 @@ const Home = () => {
         <p>
           <a href="https://www.youtube.com/watch?v=0aPLk2e2Z3g&t=1089s">링크</a>
         </p>
-        연습: 1:36:21
+        연습: 1:49:10
       </div>
     </div>
   )
