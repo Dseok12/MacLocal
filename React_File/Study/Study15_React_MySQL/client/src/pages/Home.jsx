@@ -8,6 +8,7 @@ const Home = () => {
 
   const cat = useLocation().search;
 
+  // console.log(cat);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -70,7 +71,7 @@ const Home = () => {
         <p>
           <a href="https://www.youtube.com/watch?v=0aPLk2e2Z3g&t=1089s">링크</a>
         </p>
-        연습: 1:49:10
+        연습: 2:00:30
       </div>
     </div>
   )
