@@ -1,5 +1,5 @@
 import {db} from "../db.js";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcryptjs"; // 비밀번호 암호화해주는 라이브러리
 import jwt from "jsonwebtoken";
 
 export const register = (req,res) => {
@@ -51,11 +51,11 @@ export const login = (req,res) => {
       httpOnly: true
     }).status(200).json(data[0]);
     
-  })
-
-
+  });
 
 }
+
+
 export const logout = (req,res) => {
   res.clearCookie("access_token", {
     sameSite: "none",
