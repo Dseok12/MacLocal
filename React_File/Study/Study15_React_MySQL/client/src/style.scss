@@ -1,6 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Gothic+A1:100,200,300,400,500,600,700,800,900');
 $lightGreen: #b9e7e7;
 
+.tuto_box{
+  width: 800px;
+  text-align: center;
+  margin: 30px auto;
+  border: 1px solid pink;
+  border-bottom: none;
+  li{
+    border-bottom: 1px solid pink;
+    text-align: center;
+    padding: 15px 0;
+    h2{
+      margin-bottom: 10px;
+    }
+    .tuto_time{
+      margin-top: 10px;
+    }
+  }
+}
+
 .app {
   display: flex;
   justify-content: center;

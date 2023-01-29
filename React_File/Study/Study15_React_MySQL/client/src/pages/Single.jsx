@@ -48,7 +48,7 @@ const Single = () => {
   return (
     <div className="single">
       <div className="content">
-        <img src={`${post?.img}`} alt="" />
+        <img src={`../upload/${post?.img}`} alt="" />
         <div className="user">
           {post.userImg && <img
             src={post.userImg}
@@ -67,7 +67,7 @@ const Single = () => {
             </div>
           )}
         </div>
-        <h1>{post.title}</h1>
+        <h1>{getText(post.title)}</h1>
         <p
           dangerouslySetInnerHTML={{
             __html: DOMPurify.sanitize(post.desc),

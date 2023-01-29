@@ -1,27 +1,25 @@
-import axios from 'axios';
-import React, { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom';
+import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import axios from "axios";
 
 const Home = () => {
-
   const [posts, setPosts] = useState([]);
 
-  const cat = useLocation().search;
-
-  // console.log(cat);
+  const cat = useLocation().search
 
   useEffect(() => {
     const fetchData = async () => {
-      try{
-        const res = await axios.get(`/posts${cat}`)
-        setPosts(res.data)
-      }catch(err){
+      try {
+        const res = await axios.get(`/posts${cat}`);
+        setPosts(res.data);
+      } catch (err) {
         console.log(err);
       }
-    }
+    };
     fetchData();
   }, [cat]);
-
   // const posts = [
   //   {
   //     id: 1,
@@ -48,33 +46,53 @@ const Home = () => {
   //     img: "https://images.pexels.com/photos/6157049/pexels-photo-6157049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   //   },
   // ];
-  
+
+  const getText = (html) =>{
+    const doc = new DOMParser().parseFromString(html, "text/html")
+    return doc.body.textContent
+  }
+
+
   return (
-    <div className='home'>
-      <div className='posts'>
+    <div className="home">
+      <div className="posts">
         {posts.map((post) => (
-          <div className='post' key={post.id}>
-            <div className='img'>
-              <img src={post.img} alt="" />
+          <div className="post" key={post.id}>
+            <div className="img">
+              <img src={`../upload/${post?.img}`} alt="" />
             </div>
-            <div className='content'>
-              <Link className='link' to={`/post/${post.id}`}>
-                <h1>{post.title}</h1>
+            <div className="content">
+              <Link className="link" to={`/post/${post.id}`}>
+                <h1>{getText(post.title)}</h1>
               </Link>
-              <p>{post.desc}</p>
+              <p>{getText(post.desc)}</p>
               <button>Read More</button>
             </div>
           </div>
         ))}
-      </div>
-      <div>
-        <p>
-          <a href="https://www.youtube.com/watch?v=0aPLk2e2Z3g&t=1089s">링크</a>
-        </p>
-        연습: 2:00:30
+        <ul className="tuto_box">
+          <li className="tuto_item">
+            <h2>MySQL 01</h2>
+            <p className="tuto_link">
+              <a href="https://www.youtube.com/watch?v=0aPLk2e2Z3g&t=1089s">https://www.youtube.com/watch?v=0aPLk2e2Z3g&t=1089s</a>
+            </p>
+            <p className="tuto_time">
+              연습: 2:19:30
+            </p>
+          </li>
+          <li className="tuto_item">
+            <h2>다음 튜토리얼</h2>
+            <p className="tuto_link">
+              <a href="https://www.youtube.com/watch?v=1EuNnZEp2sQ&t=204s">https://www.youtube.com/watch?v=1EuNnZEp2sQ&t=204s</a>
+            </p>
+            <p className="tuto_time">
+              연습: 
+            </p>
+          </li>
+        </ul>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
