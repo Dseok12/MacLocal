@@ -1,5 +1,5 @@
-import Express from "express";
-const app = Express();
+import express from "express";
+const app = express();
 import authRouter from "./routes/auth.js";
 import userRouter from "./routes/users.js";
 import postRouter from "./routes/posts.js";
@@ -7,6 +7,8 @@ import likeRouter from "./routes/likes.js";
 import commentRouter from "./routes/comments.js";
 
 
+/** Middlewares */
+app.use(express.json())
 
 
 
