@@ -5,15 +5,19 @@ import userRouter from "./routes/users.js";
 import postRouter from "./routes/posts.js";
 import likeRouter from "./routes/likes.js";
 import commentRouter from "./routes/comments.js";
+import cors from "cors";
+import cookieParser from "cookie-parser";
 
 
 /** Middlewares */
 app.use(express.json())
+app.use(cors())
+app.use(cookieParser())
 
 
 
 /** ./routes/user.js에서 받아옴 */
-app.use("/api/auths", authRouter)
+app.use("/api/auth", authRouter)
 app.use("/api/users", userRouter)
 app.use("/api/posts", postRouter)
 app.use("/api/likes", likeRouter)

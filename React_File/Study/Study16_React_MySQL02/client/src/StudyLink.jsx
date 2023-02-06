@@ -20,7 +20,7 @@ const StudyLink = () => {
               <a href="https://www.youtube.com/watch?v=1EuNnZEp2sQ&t=204s">https://www.youtube.com/watch?v=1EuNnZEp2sQ&t=204s</a>
             </p>
             <p className="tuto_time">
-              연습: 00:29:50
+              연습: 00:40:40
             </p>
           </li>
         </ul>

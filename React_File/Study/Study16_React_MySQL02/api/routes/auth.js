@@ -9,8 +9,9 @@ const router = express.Router();
  * 그래서 controllers 폴더를 만들어 거기서 코드를 작성함.
  * auth.js의 코드가 작동.
  */
-router.get("login", login)
-router.get("register", register)
-router.get("logout", logout)
+router.post("/login", login)
+router.post("/register", register)
+router.post("/logout", logout)
 
-export default router;
+
+export default router
