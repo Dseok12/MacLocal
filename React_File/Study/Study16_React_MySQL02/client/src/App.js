@@ -80,7 +80,7 @@ function App() {
       <ul className="box">
         <li>
           <p><a href="https://www.youtube.com/watch?v=1EuNnZEp2sQ&t=2471s">강의</a></p>
-          <p>00:46:50</p>
+          <p>00:56:00</p>
         </li>
       </ul>
     </div>
