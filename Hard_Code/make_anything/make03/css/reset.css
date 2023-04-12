@@ -47,3 +47,8 @@ table {
   display: block;
   clear: both;
 }
+@media (max-width:1024px) and (min-width:720px) {
+	img{
+		width: 100%;
+	}
+}

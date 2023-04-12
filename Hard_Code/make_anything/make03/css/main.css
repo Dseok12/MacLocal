@@ -1,3 +1,23 @@
 @charset "utf-8";
+.topWrap{width: 100%;position: relative; background: #98beea;}
+.topWrap .innerBg{width: 100%;position: relative;}
+.topWrap .innerBg .contWrap{width: 1010px;margin: 0 auto;position: relative;background: lightcoral;height: 200px;}
+.topWrap .innerBg .contWrap .txt1{position: absolute;left: 300px;top: 0;font-size: 40px;}
+.topWrap .innerBg .contWrap .txt2{position: absolute;right: 0;top: 0;font-size: 40px;}
 
 
+@media (max-width:900px) and (min-width:320px) {
+  body {
+    font-size: 62.5%;
+  }
+
+  .topWrap .innerBg .contWrap{
+    width: 92%;
+    margin: 0 auto;
+    position: relative;
+    background: lightcoral;
+    height: 20rem;
+  }
+  .topWrap .innerBg .contWrap .txt1{left: 30%; top: 0;font-size: 1rem;}
+  .txt2{right: 0;top: 0;}
+}
