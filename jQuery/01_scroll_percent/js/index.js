@@ -45,7 +45,6 @@ $(function() {
         width : (scrollPercent - 0.9) + '%'
       });
     }
-    // 맥북에서 101% 되는 오류 해결
   }
 
   function init() {
