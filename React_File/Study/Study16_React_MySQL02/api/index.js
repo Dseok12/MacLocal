@@ -31,5 +31,5 @@ app.use("/api/likes", likeRouter)
 app.use("/api/comments", commentRouter)
 
 app.listen(8800, () => {
-  console.log("8800 서버 정상 작동!!😃");
+  console.log("8800 서버 정상 작동!!😃 / 1:01:16");
 })

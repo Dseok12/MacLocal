@@ -1,5 +1,5 @@
 import express from "express";
-import {  } from "../controllers/post.js";
+import { getPosts } from "../controllers/post.js";
 
 const router = express.Router();
 
@@ -9,6 +9,6 @@ const router = express.Router();
  * 그래서 controllers 폴더를 만들어 거기서 코드를 작성함.
  * post.js의 코드가 작동.
  */
-router.get("", )
+router.get("/", getPosts)
 
 export default router;
