@@ -23,6 +23,10 @@ const handleProtected = (req, res) => {
 };
 */
 
+const globalRouter = express.Router();
+const userRouter = express.Router();
+const videoRouter = express.Router();
+
 const handleHome = (req, res) => {
   return res.send("<p>나는 여전히 배가 고프다</p>")
 };
@@ -30,8 +34,6 @@ const handleHome = (req, res) => {
 const handleLogin = (req, res) => {
   return res.send("<h1>로그인은 여기서</h1>")
 };
-
-
 
 /*
 app.use(logger);
