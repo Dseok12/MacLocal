@@ -6,9 +6,9 @@ import videoRouter from "./routers/videoRouter.js";
 
 const POST = 4000
 const app = express();
-const looger = morgan("dev");
+const logger = morgan("dev");
 
-app.use(looger);
+app.use(logger);
 
 app.use("/", globalRouter);
 app.use("/videos", videoRouter);
