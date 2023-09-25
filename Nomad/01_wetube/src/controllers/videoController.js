@@ -1,14 +1,13 @@
 export const trending = (req, res) => {
-  res.render("home");
+  res.render("home", { pageTitle: "Home" });
 };
 
 export const see = (req, res) => {
-  console.log(req.params)
-  return res.send(`Watch #${req.params.id}`);
+  res.render("watch", { pageTitle: "Watch" });
 };
 
 export const edit = (req, res) => {
-  res.send("Edit");
+  res.send("edit", { pageTitle: "Edit" });
 };
 
 export const upload = (req, res) => {
