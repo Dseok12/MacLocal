@@ -1,5 +1,5 @@
 export const trending = (req, res) => {
-  res.send("Home Page Videos");
+  res.render("home");
 };
 
 export const see = (req, res) => {
