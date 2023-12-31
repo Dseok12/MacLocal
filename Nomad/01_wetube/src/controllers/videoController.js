@@ -14,7 +14,7 @@ let videos = [
     comment: 2,
     createdAt: "2 minutes ago",
     views: 59,
-    id: 1,
+    id: 2,
   },
   {
     title: "Third Video",
@@ -22,7 +22,7 @@ let videos = [
     comment: 2,
     createdAt: "2 minutes ago",
     views: 59,
-    id: 1,
+    id: 3,
   },
 ]
 export const trending = (req, res) => {
