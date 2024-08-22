@@ -1,7 +1,7 @@
 import express from "express";
 import {
   watch,
-  edit
+  edit,
 } from "../controllers/videoController.js"
 
 const videoRouter = express.Router();

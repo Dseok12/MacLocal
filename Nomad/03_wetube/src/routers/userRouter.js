@@ -1,7 +1,7 @@
 import express from "express";
 import {
   edit,
-  remove
+  remove,
 } from "../controllers/userController.js"
 
 const userRouter = express.Router();
