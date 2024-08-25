@@ -1,14 +1,25 @@
+const fakeUser = {
+  username : "정원석",
+  loggedIn : false,
+}
+
 export const trending = (req, res) => {
-  return res.send("Home Page Videos.");
+  res.render("home", {
+    pageTitle: "Home",
+    fakeUser,
+  });
 }
 
 export const see = (req, res) => {
-  console.log(req.params)
-  return res.send(`Watch ${req.params.id}`);
+  res.render("watch", {
+    pageTitle: "Watch",
+  });
 }
 
 export const edit = (req, res) => {
-  return res.send("edit.");
+  res.render("edit", {
+    pageTitle: "Edit",
+  });
 }
 
 export const search = (req, res) => {
