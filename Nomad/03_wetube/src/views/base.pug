@@ -3,16 +3,6 @@ html(lang="ko")
   include partials/headtag.pug
   body
     header
-      if fakeUser.loggedIn
-        small Hello, #{fakeUser.username}
-      nav
-        ul
-          if fakeUser.loggedIn
-            li
-              a(href="/logout") Log out
-          else 
-            li
-              a(href="/login") Login
       h1=pageTitle
     main
       block content

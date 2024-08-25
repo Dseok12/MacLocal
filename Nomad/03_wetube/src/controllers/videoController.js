@@ -1,12 +1,35 @@
-const fakeUser = {
-  username : "정원석",
-  loggedIn : false,
-}
-
 export const trending = (req, res) => {
-  res.render("home", {
+
+  const videos = [
+    {
+      title : "Video #1",
+      rating : 2,
+      comment : 3,
+      createAt : "10 minutes ago",
+      views : 59,
+      id : 1
+    },
+    {
+      title : "Video #2",
+      rating : 12,
+      comment : 23,
+      createAt : "6 minutes ago",
+      views : 30,
+      id : 2
+    },
+    {
+      title : "Video #3",
+      rating : 1,
+      comment : 2,
+      createAt : "5 minutes ago",
+      views : 5,
+      id : 3
+    },
+  ];
+
+  return res.render("home", {
     pageTitle: "Home",
-    fakeUser,
+    videos,
   });
 }
 
