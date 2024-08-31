@@ -1,0 +1,4 @@
+*{margin: 0;padding: 0;}
+.app{padding: 5%;width: 500px;margin: 0 auto;}
+.app > section{padding: 3%;background: #f1f1f1;margin-top: 1rem;}
+.controller_wrap button{width: 60px; padding: 2px;cursor: pointer;margin: 0 3px;}
