@@ -1,0 +1,4 @@
+.ListWrap{display: flex;flex-direction: column;gap: 20px;}
+.ListWrap > input{width: 100%;border: none; border-bottom: 1px solid rgb(220, 220, 220);padding: 15px 0;}
+.ListWrap > input:focus{outline: none;border-bottom: var(--main-color);}
+.todos_wrapper{display: flex;flex-direction: column;gap: 20px;}

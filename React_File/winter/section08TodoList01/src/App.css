@@ -1,0 +1,15 @@
+* {padding: 0;margin: 0;}
+li{list-style: none;}
+
+.App{
+  width: calc(100% - 400px);margin: 0 auto;padding: 3% 0;
+  display: flex;flex-direction: column;gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;gap: 10px;
+}
+
+:root{
+  --main-color:rgb(37, 147, 255);
+}
+

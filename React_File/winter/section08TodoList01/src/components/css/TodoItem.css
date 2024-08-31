@@ -1,0 +1,5 @@
+.TodoItemWrap{display: flex;align-items: center; gap: 20px; padding: 10px 0;border-bottom: 1px solid rgb(220, 220, 220);}
+.TodoItemWrap input{width: 20px;}
+.TodoItemWrap .contents{flex: 1;}
+.TodoItemWrap .date{font-size: 14px;color: gray;}
+.TodoItemWrap button{cursor: pointer;color: gray;font-size: 14px;border: none;border-radius: 5px;padding: 5px;}
