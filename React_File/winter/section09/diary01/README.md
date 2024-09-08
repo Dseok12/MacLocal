@@ -193,3 +193,9 @@ export default App
 ```
 * 위와 같이 많은 이미지를 관리 할 시 public 폴더 밑에 img폴더를 만들고 하위에 이미지 역할에 따라 폴더를 만들고 관리할 수 있다.
 
+---
+# useReucer
+
+
+# Context
+
