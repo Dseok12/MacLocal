@@ -104,3 +104,92 @@ const App = () => {
 
     export default Home
   ```
+---
+
+# 이미지 관리하기
+방법은 2가지로 나뉜다.
+1. assets폴더에서 관리
+* 이미지가 몇개만 필요할 때 assets폴더에서 관리한다.
+  * 이유는 assets폴더에서 관리를 하게 되면 서버에서 그때그때 다운로드 받을 필요 없이 웹브라우저 메모리에 저장된 이미지를 바로바로 꺼내 쓸 수 있어 웹 속도에 영향을 미치지 않는다. 다운로드를 최초 1회만 진행하기 때문에 웹 로딩 속도에 개선을 줄 수 있다.
+```javascript
+import img1 from "./assets/img1.jpg";
+
+const App => () = {
+  return (
+    <>
+      <img src={img1} />
+    </>
+  )
+}
+
+export default App
+
+```
+위와 같이 이미지를 불러오면 각 파일마다 ```import img1 from "./assets.img.jpg"```를 작성해줘야한다.
+이와 같은 번거로움을 제거하기 위해 이미지를 관리하는 파일을 작성한다.
+src폴더 밑에 util 파일을 만들고 get-img.js파일을 만든다.
+```javascript
+// get-img.js파일
+
+import img1 from "./../assets/img1.png";
+import img2 from "./../assets/img2.png";
+import img3 from "./../assets/img3.png";
+import img4 from "./../assets/img4.png";
+import img5 from "./../assets/img5.png";
+
+export function getImages (imgId) {
+  switch(imgId){
+    case 1: return img1;
+    case 2: return img2;
+    case 3: return img3;
+    case 4: return img4;
+    case 5: return img5;
+    default : return null;
+  }
+}
+```
+
+위와 같이 작성 후 App.jsx파일에
+```javascript
+import { getImages } from './util/get-img.js';
+
+const App = () => {
+  return (
+    <>
+    <div>
+      <img src={getImages(1)} alt="" />
+      <img src={getImages(2)} alt="" />
+      <img src={getImages(3)} alt="" />
+      <img src={getImages(4)} alt="" />
+      <img src={getImages(5)} alt="" />
+    </div>
+    </>
+  )
+}
+
+export default App
+```
+위와 같이 개선 작업으로 이미지를 불러오는 수고스러움을 덜어낼 수 있다.
+
+2. public폴에서 관리를 할 수 있다.
+* public폴에서 이미지 관리 <i sytle="font-weight:bold;">작업 시 새로고침을 할 때마다 이미지를 서버에서 다운</i>을 받는다. 하지만 이미지가 많을 시 public폴더에 이미지를 관리하는 것이 효율적일 수도 있다.
+```javascript
+function App() {
+  return (
+    <>
+      {/* 다수의 이미지를 사용할 때는 public폴더에서 운영을 하는 것이 좋다. */}
+      <div>
+        <img src={"public/img/img1.jpg"} alt="" />
+        <img src={"public/img/img2.jpg"} alt="" />
+        <img src={"public/img/img3.jpg"} alt="" />
+        <img src={"public/img/img4.jpg"} alt="" />
+        <img src={"public/img/img5.jpg"} alt="" />
+      </div>
+    </>
+  )
+}
+
+export default App
+```
+* 위와 같이 많은 이미지를 관리 할 시 public 폴더 밑에 img폴더를 만들고 하위에 이미지 역할에 따라 폴더를 만들고 관리할 수 있다.
+
