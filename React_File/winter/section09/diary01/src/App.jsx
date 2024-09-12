@@ -11,25 +11,25 @@ import Notfound from './pages/Notfound.jsx';
 const mockData = [
   {
     id: 1,
-    createDate: new Date().getTime(),
+    createDate: new Date("2024-09-12").getTime(),
     emotionId: 1,
     content: "1번 일기 내용",
   },
   {
     id: 2,
-    createDate: new Date().getTime(),
+    createDate: new Date("2024-09-11").getTime(),
     emotionId: 2,
     content: "2번 일기 내용",
   },
   {
     id: 3,
-    createDate: new Date().getTime(),
+    createDate: new Date("2024-07-10").getTime(),
     emotionId: 3,
     content: "3번 일기 내용",
   },
   {
     id: 4,
-    createDate: new Date().getTime(),
+    createDate: new Date("2023-10-31").getTime(),
     emotionId: 4,
     content: "4번 일기 내용",
   },
@@ -53,8 +53,8 @@ const reducer = (state, action) => {
   }
 }
 
-const DiaryStateContext = createContext();
-const DiaryDispatchContext = createContext();
+export const DiaryStateContext = createContext();
+export const DiaryDispatchContext = createContext();
 
 function App() {
 
@@ -108,7 +108,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/new" element={<New />} />
             <Route path="/diary/:id" element={<Diary />} />
-            <Route path="/eidt/:id" element={<Edit />} />
+            <Route path="/edit/:id" element={<Edit />} />
             <Route path="*" element={<Notfound />} />
           </Routes>
         </DiaryDispatchContext.Provider>
