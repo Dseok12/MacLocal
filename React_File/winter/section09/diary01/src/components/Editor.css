@@ -1,0 +1,15 @@
+.Editor > section {margin-bottom: 40px;}
+.Editor h4{font-size: 22px;font-weight: bold;padding: 20px 0;}
+.Editor > section > input, textarea{background: rgb(236, 236, 236);border: none; border-radius: 5px;font-size: 21px;padding: 10px 20px;}
+
+.Editor > section > textarea {width: 100%;padding: 20px;min-height: 200px;resize: vertical;box-sizing: border-box;}
+
+.emotion_list_wrapper{display: flex;justify-content: space-around;gap: 2%;}
+
+.EmotionItem_on_1{color: #fff; background: rgb(100, 200, 100) !important;}
+.EmotionItem_on_2{color: #fff; background: rgb(157, 215, 114) !important;}
+.EmotionItem_on_3{color: #fff; background: rgb(253, 206, 23) !important;}
+.EmotionItem_on_4{color: #fff; background: rgb(253, 132, 70) !important;}
+.EmotionItem_on_5{color: #fff; background: rgb(253, 86, 95) !important;}
+
+.button_section{display: flex;align-items: center;justify-content: space-between;}
