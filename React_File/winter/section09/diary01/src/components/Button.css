@@ -1,4 +1,4 @@
-.Button{
+.Button {
   background: rgb(236, 236, 236);
   cursor: pointer;
   border: none;
@@ -7,6 +7,14 @@
   font-size: 18px;
   white-space: nowrap;
 }
+
 /* .Button_DEFAULT{} */
-.Button_POSITIVE{background: rgb(100, 201, 100);color: #fff;}
-.Button_NEGATIVE{background: rgb(253, 86, 95);color: #fff;}
+.Button_POSITIVE {
+  background: rgb(100, 201, 100);
+  color: #fff;
+}
+
+.Button_NEGATIVE {
+  background: rgb(253, 86, 95);
+  color: #fff;
+}
