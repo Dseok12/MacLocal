@@ -55,9 +55,8 @@ export const DiaryDispatchContext = createContext();
 
 function App() {
   const [data, dispatch] = useReducer(reducer, mockData);
-  const idRef = useRef(3);
+  const idRef = useRef(5); // ID가 겹치지 않도록 마지막 mockData의 id + 1로 설정
 
-  // 새로운 일기 추가
   const onCreate = (createDate, emotionId, content) => {
     dispatch({
       type: 'CREATE',
@@ -70,7 +69,6 @@ function App() {
     });
   };
 
-  // 기존 일기 수정
   const onUpdate = (id, createDate, emotionId, content) => {
     dispatch({
       type: 'UPDATE',
@@ -83,7 +81,6 @@ function App() {
     });
   };
 
-  // 기존 일기 삭제
   const onDelete = (id) => {
     dispatch({
       type: 'DELETE',
@@ -92,25 +89,23 @@ function App() {
   };
 
   return (
-    <>
-      <DiaryStateContext.Provider value={data}>
-        <DiaryDispatchContext.Provider
-          value={{
-            onCreate,
-            onUpdate,
-            onDelete,
-          }}
-        >
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/new" element={<New />} />
-            <Route path="/diary/:id" element={<Diary />} />
-            <Route path="/edit/:id" element={<Edit />} />
-            <Route path="*" element={<Notfound />} />
-          </Routes>
-        </DiaryDispatchContext.Provider>
-      </DiaryStateContext.Provider>
-    </>
+    <DiaryStateContext.Provider value={data}>
+      <DiaryDispatchContext.Provider
+        value={{
+          onCreate,
+          onUpdate,
+          onDelete,
+        }}
+      >
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/new" element={<New />} />
+          <Route path="/diary/:id" element={<Diary />} />
+          <Route path="/edit/:id" element={<Edit />} />
+          <Route path="*" element={<Notfound />} />
+        </Routes>
+      </DiaryDispatchContext.Provider>
+    </DiaryStateContext.Provider>
   );
 }
 
