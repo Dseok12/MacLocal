@@ -5,11 +5,13 @@ import Button from "../components/Button.jsx";
 import Editor from "../components/Editor.jsx";
 import Header from "../components/Header.jsx";
 import useDiary from "../hooks/useDiary.jsx"; // useDiary 훅을 가져옵니다
+import usePageTitle from "../hooks/usePageTitle.jsx";
 
 const Edit = () => {
   const params = useParams();
   const nav = useNavigate();
   const { onDelete, onUpdate } = useContext(DiaryDispatchContext);
+  usePageTitle(`${params.id}번 일기 수정`);
 
   // useDiary 훅을 사용하여 curDiaryItem을 가져옵니다
   const curDiaryItem = useDiary({ id: params.id });

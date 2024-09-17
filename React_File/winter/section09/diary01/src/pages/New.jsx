@@ -4,11 +4,13 @@ import { DiaryDispatchContext } from "../App.jsx";
 import Button from "../components/Button.jsx";
 import Editor from "../components/Editor.jsx";
 import Header from "../components/Header.jsx";
+import usePageTitle from "../hooks/usePageTitle.jsx";
 
 const New = () => {
   // DiaryDispatchContext에서 onCreate를 포함한 객체를 구조 분해 할당으로 가져옴
   const { onCreate } = useContext(DiaryDispatchContext);
   const nav = useNavigate();
+  usePageTitle("새 일기 쓰기");
 
   const onSubmit = (input) => {
     onCreate(input.createDate.getTime(), input.emotionId, input.content);
