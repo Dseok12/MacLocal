@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { DiaryStateContext } from '../App.jsx';
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { DiaryStateContext } from "../App.jsx";
 
 const useDiary = ({ id }) => {
   const nav = useNavigate();
@@ -13,8 +13,8 @@ const useDiary = ({ id }) => {
     );
 
     if (!currentDiaryItem) {
-      window.alert('존재하지 않는 일기입니다.');
-      nav('/', { replace: true });
+      window.alert("존재하지 않는 일기입니다.");
+      nav("/", { replace: true });
     }
 
     setCurDiaryItem(currentDiaryItem);

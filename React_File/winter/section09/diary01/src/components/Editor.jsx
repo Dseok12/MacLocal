@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { emotionList } from '../util/constants.js';
-import { getStringedDate } from '../util/get-stringed-date.js';
-import Button from './Button.jsx';
-import './Editor.css';
-import EmotionItem from './EmotionItem.jsx';
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { emotionList } from "../util/constants.js";
+import { getStringedDate } from "../util/get-stringed-date.js";
+import Button from "./Button.jsx";
+import "./Editor.css";
+import EmotionItem from "./EmotionItem.jsx";
 
 const Editor = ({ initData, onSubmit }) => {
   const [input, setInput] = useState({
     createDate: new Date(),
     emotionId: 3,
-    content: '',
+    content: "",
   });
 
   const nav = useNavigate();
@@ -28,7 +28,7 @@ const Editor = ({ initData, onSubmit }) => {
     let name = e.target.name;
     let value = e.target.value;
 
-    if (name === 'createDate') {
+    if (name === "createDate") {
       value = new Date(value);
     }
 
@@ -61,7 +61,7 @@ const Editor = ({ initData, onSubmit }) => {
               onClick={() => {
                 onChangInput({
                   target: {
-                    name: 'emotionId',
+                    name: "emotionId",
                     value: item.emotionId,
                   },
                 });
@@ -87,12 +87,12 @@ const Editor = ({ initData, onSubmit }) => {
           onClick={() => {
             nav(-1);
           }}
-          text={'취소하기'}
+          text={"취소하기"}
         />
         <Button
           onClick={onClickSubmitButton}
-          text={'작성완료'}
-          type={'POSITIVE'}
+          text={"작성완료"}
+          type={"POSITIVE"}
         />
       </section>
     </div>

@@ -4,11 +4,11 @@
  * 3. useContext를 import하고 App.jsx에서 export한 Context를 불러온다.
  * */
 
-import { useContext, useState } from 'react';
-import { DiaryStateContext } from '../App.jsx';
-import Button from '../components/Button.jsx';
-import DiaryList from '../components/DiaryList.jsx';
-import Header from '../components/Header.jsx';
+import { useContext, useState } from "react";
+import { DiaryStateContext } from "../App.jsx";
+import Button from "../components/Button.jsx";
+import DiaryList from "../components/DiaryList.jsx";
+import Header from "../components/Header.jsx";
 
 const getMonthlyData = (pivotDate, data) => {
   // pivotDate의 년도와 월인데 해당하는 월에 1일에 0시 0분 0초에 해당하는 데이터 객체를 만들어서 넣어놨다.
@@ -54,8 +54,8 @@ const Home = () => {
     <>
       <Header
         title={`${pivotDate.getFullYear()}년 ${pivotDate.getMonth() + 1}월`}
-        leftChild={<Button text={'<'} onClick={onDecreaseMonth} />}
-        rightChild={<Button text={'>'} onClick={onIncreaseMonth} />}
+        leftChild={<Button text={"<"} onClick={onDecreaseMonth} />}
+        rightChild={<Button text={">"} onClick={onIncreaseMonth} />}
       />
       <DiaryList data={monthlyData} />
     </>

@@ -1,65 +1,88 @@
-import { createContext, useReducer, useRef } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import './css/reset.css';
-import Diary from './pages/Diary.jsx';
-import Edit from './pages/Edit.jsx';
-import Home from './pages/Home.jsx';
-import New from './pages/New.jsx';
-import Notfound from './pages/Notfound.jsx';
-
-const mockData = [
-  {
-    id: 1,
-    createDate: new Date('2024-09-12').getTime(),
-    emotionId: 1,
-    content: '1번 일기 내용',
-  },
-  {
-    id: 2,
-    createDate: new Date('2024-09-11').getTime(),
-    emotionId: 2,
-    content: '2번 일기 내용',
-  },
-  {
-    id: 3,
-    createDate: new Date('2024-07-10').getTime(),
-    emotionId: 3,
-    content: '3번 일기 내용',
-  },
-  {
-    id: 4,
-    createDate: new Date('2023-10-31').getTime(),
-    emotionId: 4,
-    content: '4번 일기 내용',
-  },
-];
+import { createContext, useEffect, useReducer, useRef, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import "./css/reset.css";
+import Diary from "./pages/Diary.jsx";
+import Edit from "./pages/Edit.jsx";
+import Home from "./pages/Home.jsx";
+import New from "./pages/New.jsx";
+import Notfound from "./pages/Notfound.jsx";
 
 const reducer = (state, action) => {
+  let nextState;
   switch (action.type) {
-    case 'CREATE':
-      return [action.data, ...state];
-    case 'UPDATE':
-      return state.map((item) =>
+    case "INIT":
+      return action.data;
+    case "CREATE": {
+      nextState = [action.data, ...state];
+      break;
+    }
+    case "UPDATE": {
+      nextState = state.map((item) =>
         String(item.id) === String(action.data.id) ? action.data : item
       );
-    case 'DELETE':
-      return state.filter((item) => String(item.id) !== String(action.id));
+      break;
+    }
+    case "DELETE": {
+      nextState = state.filter((item) => String(item.id) !== String(action.id));
+      break;
+    }
     default:
       return state;
   }
+  localStorage.setItem("diary", JSON.stringify(nextState));
+  return nextState;
 };
 
 export const DiaryStateContext = createContext();
 export const DiaryDispatchContext = createContext();
 
 function App() {
-  const [data, dispatch] = useReducer(reducer, mockData);
-  const idRef = useRef(5); // ID가 겹치지 않도록 마지막 mockData의 id + 1로 설정
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, dispatch] = useReducer(reducer, []);
+  const idRef = useRef(0); // ID가 겹치지 않도록 마지막 mockData의 id + 1로 설정
+
+  useEffect(() => {
+    const storedData = localStorage.getItem("diary");
+    if (!storedData) {
+      setIsLoading(false);
+      return;
+    }
+    const parsedData = JSON.parse(storedData);
+    let maxId = 0;
+
+    if (!Array.isArray(parsedData)) {
+      setIsLoading(false);
+      return;
+    }
+
+    parsedData.forEach((item) => {
+      if (Number(item.id) > maxId) {
+        maxId = Number(item.id);
+      }
+    });
+
+    idRef.current = maxId + 1;
+
+    dispatch({
+      type: "INIT",
+      data: parsedData,
+    });
+    setIsLoading(false);
+  }, []);
+
+  // localStorage.setItem('test', 'hello');
+  // localStorage.setItem('person', JSON.stringify({ name: 'Dseok' }));
+
+  // console.log(localStorage.getItem('test'));
+  // console.log(JSON.parse(localStorage.getItem('person')));
+  // JSON의 parse는 값이 null이거나 undefined이면 오류가 발생
+
+  // localStorage.removeItem('test');
 
   const onCreate = (createDate, emotionId, content) => {
     dispatch({
-      type: 'CREATE',
+      type: "CREATE",
       data: {
         id: idRef.current++,
         createDate,
@@ -71,7 +94,7 @@ function App() {
 
   const onUpdate = (id, createDate, emotionId, content) => {
     dispatch({
-      type: 'UPDATE',
+      type: "UPDATE",
       data: {
         id,
         createDate,
@@ -83,10 +106,14 @@ function App() {
 
   const onDelete = (id) => {
     dispatch({
-      type: 'DELETE',
+      type: "DELETE",
       id,
     });
   };
+
+  if (isLoading) {
+    return <div>데이터 로딩중...</div>;
+  }
 
   return (
     <DiaryStateContext.Provider value={data}>

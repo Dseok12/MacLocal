@@ -1,6 +1,6 @@
-import { emotionList } from '../util/constants.js';
-import { getEmotionImages } from '../util/get-emotion-image.js';
-import './Viewer.css';
+import { emotionList } from "../util/constants.js";
+import { getEmotionImages } from "../util/get-emotion-image.js";
+import "./Viewer.css";
 
 const Viewer = ({ emotionId, content }) => {
   const emtionItem = emotionList.find(

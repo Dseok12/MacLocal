@@ -5,7 +5,7 @@
 .Editor h4 {
   font-size: 22px;
   font-weight: bold;
-  padding: 20px 0;
+  padding: 20px;
 }
 
 .Editor>section>input,
@@ -60,4 +60,9 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.Editor .content_section{
+  margin-bottom: 30px !important;
+  padding-bottom: 0;
 }
