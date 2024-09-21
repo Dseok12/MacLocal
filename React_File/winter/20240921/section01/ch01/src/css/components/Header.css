@@ -1,0 +1,10 @@
+.Header h3{
+  margin-bottom: 20px;
+}
+
+.Header > h1{
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(37, 147, 255);
+  margin-bottom: 30px;
+}

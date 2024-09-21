@@ -1,0 +1,10 @@
+.List > input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgb(220, 220, 220);
+  padding: 15px 0;
+}
+.List > input:focus {
+  outline: none;
+  border-bottom: 1px solid rgb(37, 147, 255);
+}
