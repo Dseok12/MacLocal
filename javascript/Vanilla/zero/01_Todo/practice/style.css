@@ -48,12 +48,12 @@ h2 {
 
 .todo_form {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-top: 12px;
 }
 
 .todo_input {
-  width: 100%;
+  width: 75%;
   font-size: 16px;
   padding: 12px 14px;
   background-color: #f6f6f6;
