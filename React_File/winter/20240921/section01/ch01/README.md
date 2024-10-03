@@ -7,7 +7,7 @@
 const [todos, setTodos] = useState(mockData);
 ```
 
-useState에 mockData를 넣는다. 3. List를 추가하기 위해서 onCreate함수를 만드는데
+useState에 mockData를 넣는다.<br/> 3. List를 추가하기 위해서 onCreate함수를 만드는데
 
 ```javascript
 const onCreate = (conntent) => {
