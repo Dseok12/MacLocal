@@ -1,0 +1,14 @@
+@charset "utf-8";
+.wrap{
+  width: 1010px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+.todo-list {
+  margin-top: 20px;
+}
+
+.todo-item {
+  margin: 5px 0;
+}
+
