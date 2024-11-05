@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Swiper Carousel</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        .swiper-container {width: 90%;height: 50vh;margin: auto;overflow: hidden;}
+        .swiper-slide{width: auto !important;opacity: 50%;}
+        .swiper-slide-active{opacity: 100%;}
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <!-- 총 5개의 슬라이드 -->
+            <div class="swiper-slide"><img src="https://via.placeholder.com/300" alt=""></div>
+            <div class="swiper-slide"><img src="https://via.placeholder.com/300" alt=""></div>
+            <div class="swiper-slide">
+                <!-- <div class="event-label">EVENT</div> -->
+                <img src="https://via.placeholder.com/300" alt="">
+            </div>
+            <div class="swiper-slide"><img src="https://via.placeholder.com/300" alt=""></div>
+            <div class="swiper-slide"><img src="https://via.placeholder.com/300" alt=""></div>
+        </div>
+        <!-- 네비게이션 화살표 -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            effect: 'coverflow',
+            centeredSlides: true,
+            slideToClickedSlide: true,
+            slidesPerView: 'auto', // 슬라이드의 수를 반응형으로 설정
+            coverflowEffect: {
+                rotate: 0, // 슬라이드 회전 각도
+                stretch: 0, // 슬라이드 사이의 간격
+                depth: 100, // 슬라이드 깊이
+                modifier: 1,
+                slideShadows: false, // 슬라이드 그림자 비활성화
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            spaceBetween: 10, // 슬라이드 간의 간격을 조정
+        });
+    </script>
+</body>
+</html>
