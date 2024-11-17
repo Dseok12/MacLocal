@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/jquery.bxslider.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <title>기본셋팅</title>
+</head>
+<body>
+  <div class="btn_wrap">
+    <p class="btn btn01">고승용</p>
+    <p class="btn btn02">배기범</p>
+  </div>
+  <script src="./js/jquery-3.6.0.min.js"></script>
+  <script src="./js/jquery.bxslider.min.js"></script>
+  <script src="./js/index.js"></script>
+  <script>
+    // jQuery로 클릭 이벤트 추가
+    $(document).ready(function () {
+        // .btn01 클릭 시
+        $('.btn01').on('click', function () {
+            $('.btn01').addClass('on'); // .btn01에 on 클래스 추가
+            $('.btn02').removeClass('on'); // .btn02에서 on 클래스 제거
+        });
+
+        // .btn02 클릭 시
+        $('.btn02').on('click', function () {
+            $('.btn02').addClass('on'); // .btn02에 on 클래스 추가
+            $('.btn01').removeClass('on'); // .btn01에서 on 클래스 제거
+        });
+    });
+  </script>
+</body>
+</html>
