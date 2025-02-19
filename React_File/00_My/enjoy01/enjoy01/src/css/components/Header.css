@@ -1,0 +1,5 @@
+.HeaderAll{border-bottom: 1px solid #f4f4f4;background: #ffffff;box-shadow: 2px 2px 10px #f5f5f5;}
+.conWrap{display: flex;align-items: center;justify-content: space-between;padding: 1rem 0;}
+.headerNav_box{display: flex;align-items: center;justify-content: center;gap: 1rem;}
+.headerNav_box > li > a{color: #000;font-size: 18px;}
+.logo > a{font-weight: bold;font-size: 26px;}
