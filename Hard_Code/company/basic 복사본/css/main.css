@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+.btn_wrap{width: 500px;margin: 100px auto; display: flex;align-items: center;justify-content: center;gap: 10px;}
+.btn01{width: 100px;height: 80px;line-height: 80px;border: 2px solid #e1e1e1;text-align: center;cursor: pointer;}
+.btn01.on{border: 2px solid red;}
+.btn02{width: 100px;height: 80px;line-height: 80px;border: 2px solid #e1e1e1;text-align: center;cursor: pointer;}
+.btn02.on{border: 2px solid blue;}
