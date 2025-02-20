@@ -11,7 +11,7 @@ const Introduce = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Introduce
+export default Introduce;

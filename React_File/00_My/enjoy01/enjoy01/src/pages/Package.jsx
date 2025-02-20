@@ -11,7 +11,7 @@ const Package = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Package
+export default Package;

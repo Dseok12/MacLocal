@@ -1,4 +1,4 @@
-import "../css/pages/Home.css";
+import '../css/pages/Home.css';
 const Home = () => {
   return (
     <>
@@ -12,7 +12,7 @@ const Home = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
