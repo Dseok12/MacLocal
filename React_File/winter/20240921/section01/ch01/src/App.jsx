@@ -7,7 +7,7 @@ import "./css/reset.css";
 const mockData = [
   {
     id: 0,
-    isDone: true,
+    isDone: false,
     content: "react 공부하기",
     date: new Date().getTime(),
   },
@@ -19,7 +19,7 @@ const mockData = [
   },
   {
     id: 2,
-    isDone: true,
+    isDone: false,
     content: "노래연습하기",
     date: new Date().getTime(),
   },
