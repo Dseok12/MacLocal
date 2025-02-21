@@ -2,7 +2,15 @@ import '@styles/base/_Reset.css';
 import '@styles/common/common.css';
 import { Route, Routes } from 'react-router-dom';
 
-import { About, Header, Home, Introduce, Package } from '@import'; // alias 적용
+import {
+  About,
+  Blog,
+  Header,
+  Home,
+  Introduce,
+  NotFound,
+  Package,
+} from '@import';
 
 function App() {
   return (
@@ -13,6 +21,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/introduce" element={<Introduce />} />
         <Route path="/package" element={<Package />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
